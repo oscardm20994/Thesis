@@ -84,10 +84,66 @@ Where $U_c$ is a critical velocity corresponding to the background flow when $m 
 
 This result implies that vertical propagation can only occur through background westerly zonal flow with a magnitude less than some critical value, $U_c$, which depends on the horizontal wavenumbers of the wave. More specifically, equation \ref{eq:propagation_critera} shows that smaller wave-numbers (larger wavelengths) favours greater propagation and is the reason the majority of wave-mean flow interactions involving the vortex occur with disturbances of wavenumbers 1-3 (referred to as wave-n disturbances). 
 
-\section{Sudden Stratospheric Warmings}
+The Charney-Drazin criterion also leads to the definition of a critical layer of the atmosphere as the layer at which the background zonal flow no longer supports propagation of a given wave (i.e. where $U \sim U_c$). When a wave encounters a critical layer, much of the linear dynamical behaviour proposed in equations \ref{eq:Linearised_QGPV} breaks down as the waves' amplitude grows too large to support continued propagation and the wave dissipates, transferring momentum to the background flow through so called wave-mean flow interactions. There therefore exists a two way interaction between the background flow and wave disturbances in the atmosphere: the magnitude of $U$ relative to $U_c$ dictates the propagation of waves through the troposphere into the stratosphere and waves significantly influence the background wind upon dissipation at a critical layer.
 
-\subsection{The Equatorial Stratosphere}
-\subsection{Stratosphere-Troposphere Coupling and Surface Variability}
-\subsection{Stratosphere-Ocean Interactions}
+Wave-mean flow momentum deposition which is key for understanding stratospheric dynamical variability can be quantified via the iontroduction of a variable known as the Eliassen-Palm flux. In the QG framework as above, equations for the zonal mean and eddy components of the wind vector ($u, v$) and buoyancy ($b$), the vertical acceleration of air parcels due to density variations, can be expressed as 
+
+\begin{equation} \label{eq:QG_Ubar}
+\frac{\partial \overline{u}}{\partial t} = f\overline{v} - \frac{\partial}{\partial y} \overline{u'v'} + \overline{X}, 
+\end{equation}
+
+\begin{equation} \label{eq:QG_theta}
+\frac{\partial \overline{b}}{\partial t} = -N^2\overline{w} - \frac{\partial}{\partial y} \overline{v'b'} + \overline{Q}, 
+\end{equation}
+
+where the overbar denotes a zonal mean quantities and deviations from this (eddy quantities) are denoted by primes. $\overline{X}$ and $\overline{Y}$ represent the dissipative forces on the flow (in this case friction and diabatic heating). Buoyancy is used in these equations as a close analogous of temperature. $b = g\frac{T - T_r}{T_r}$ where $T_r$ is a reference temperature normally defined by height. $b$ is related to the concept of reduced gravity which is important when considering vertical fluid motion. 
+
+In order to decouple these equations, we introduce the mean residual circulation, the difference between zonal mean flow and contributions from eddy-mean flow interactions. These are known as the Transformed Eulerian Mean (TEM) meridional and vertical velocities \citep{Andrews1976} (denoted by $^*$) and can be expressed as 
+
+\begin{equation} \label{eq:V*}
+\overline{v^*} = \overline{v} - \frac{1}{\rho_0}\frac{\partial}{\partial z} \bigg(\rho_0 \frac{\overline{v'\theta'}}{\frac{\partial{\overline{\theta}}}{\partial{z}}}\bigg)
+\end{equation}\break
+\begin{equation} \label{eq:W*}
+\overline{w^*} = \overline{w} + \frac{\partial}{\partial y} \bigg( \frac{\overline{v'b'}}{\frac{\partial{\overline{\theta}}}{\partial{z}}}\bigg).
+\end{equation}
+
+
+Under these transformations the decoupled equations can be written as
+
+\begin{equation} \label{eq:decoupled_U}
+\frac{\partial \overline{u}}{\partial t} - f_0 \overline{v*} = \frac{1}{\rho_0} (\nabla \cdot F) + \overline{X}
+\end{equation}
+
+and
+
+\begin{equation} \label{eq:decoupled_b}
+\frac{\partial \overline{b}}{\partial t} + N^2 \overline{w*} = \overline{Q},
+\end{equation}
+
+where
+
+\begin{equation} \label{eq:EP_flux}
+F = -\rho_0 \overline{u'v'}\textbf{j} + f\rho_0\frac{\overline{v'\theta'}}{\frac{\partial{\overline{\theta}}}{\partial{z}}} \textbf{k}
+\end{equation}
+
+is the Eliassen-Palm flux which can be thought of as the flux of wave activity in the meridional and vertical directions (\textbf{j} and \textbf{k} represent unit vectors in the $y$ and $z$ directions) \citep{Andrews1976}. These equations indicate that EP flux divergence ($\nabla \cdot F > 0$) signifies momentum dissipation accelerating the ZMZW ($\overbar{u}$). Conversely, flux convergence ($\nabla \cdot F < 0$) indicates deceleration in ZMZW due to wave dissipation.
+
+\subsection{Other Atmospheric Waves} \label{sec:other_waves}
+In addition to planetary scale Rossby waves outlined in previous sections, other types of wave play a vital role in stratospheric variability. Gravity waves arise due to buoyancy variations and, similarly to planetary waves, can be forced through airflow over variations in topography (orographic) or convection fronts (non orographic). These waves exhibit length scales significantly shorter than planetary waves ($\sim xxxm$) and are often not explicitly represented in general circulation models (GCMs) due to horizontal resolution issues. Instead their effects are parameterised and appear in the dissipative force term ($\overline{X}$) in in equation \ref{eq:QG_Ubar}
+
+Kelvin waves occur when air is trapped between regions in which Coriolis force terms act in opposite directions. In these regions, geostrophic balance does not apply and the waves exhibit a westerly phase velocity. Dissipation of these waves contributes westerly momentum to the background flow. Finally, Rossby-gravity waves exhibit different behaviour for small and large length scales (or horizontal wave number, $k$). for small $k$ (large length scale), they reduce to Rossby wavelike disturbances, similar to planetary scale Rossby waves outlined in the previous section in which variations in Coriolis parameter with latitude act as the restoring force. For large $k$ (shorter length scales), they behave as gravity waves (those for which the restoring force is gravity). Rossby-gravity waves typically have easterly phase velocity and contribute easterly momentum to background flow upon dissipation \citep{Andrews1976}.
+
+\section{Sudden Stratospheric Warmings}
+While the vortex generally exhibits strong, westerly flow over the boreal winter, it can be significantly disrupted on sub-seasonal timescales
+(see individual season winds on figure \ref{fig:ERAclimDJF}b). This reversal occurs due to the dissipation of planetary waves on the vortex depositiong easterly momentum on the backgroud flow. If this deposition is large enough such that the westerly flow reverses an event known as a sudden stratospheric warming (SSW) occurs. Such events are named as they are often associated with significant and rapid increases in middle atmosphere polar cap temperature ($\sim~50K$ over a few days) and they were first observed in radiosonde data in Scherberg et al. 1952 (ref xxxx). In observation based datasets SSWs occur at an average rate of xxxx events per decade and represent one of the largest modes of interannual variability in the NH stratosphere.
+
+Matsuno 1971 was the first work to introduce a dynamical model linking the action of planetary waves and the occurence of SSWs. The framework developed by this work is still largely accepted today and describes the mechanisms involved in the life cycle of an SSW as follows. First, a burst of planetary wave activity is generated in the troposphere through a combination of airflow of topography and convection fronts. Waves subsequently propagate into the stratosphere in accordance with the Charney-Drazin criterion. When these waves encounter a critical layer (normally one which exhibits stronger westerlies than $U_c$ as the undisturbed vortex is strong) these waves break and dissipate easterly momentum to the background zonal flow. As a result, the westerly vortex decelerates and, if the planetary wave activity is strong enough, even reverses. As a result, new critical layers are formed (where $\overline{u} = 0$) at a level below that of the original reversal. Subsequent waves now dissipate and can act to reverse the background flow at this lower critical layer. This process repeats and the critical layers can descend into the lower stratosphere. Once the critical layer lies near the tropopause, planetary waves are effectively prevented from entering the stratosphere stopping further deceleration of the vortex. With wave driving of the vortex prevented, radiative cooling of the stratosphere subsequently bring polar cap temperatures back down and the strong westerly flow of the vortex recovers. 
+
+This framework provides a mechanism by which SSWs occur through planetary waves influencing the zonal mean flow. However, further studies into these events show that the geometry of the vortex is altered significantly during an SSW. The vortex can either be shifted from its stable centroid to a lower latitude or split into two daughter vortices (each of which exhibits a core of high PV air). It's further shown in xxxx et al. that the type of deformation depends on the wave number of the dominant planetary waves involved with wave-1 disturbances more associated with displacement events and wave-2 with split events. Figure xxxx demonstrates the three vortex configurations: stable (strong vortex), displaced and split.
+
+
+\section{The Equatorial Stratosphere}
+\section{Stratosphere-Troposphere Coupling and Surface Variability}
+\section{Stratosphere-Ocean Interactions}
 
 
