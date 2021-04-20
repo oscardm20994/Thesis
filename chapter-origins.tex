@@ -95,7 +95,7 @@ x_n = \alpha x_{n - 1} + z_n,
 
 where $\alpha$ is the lag-1 autocorrelation of the time series and $z_n$ is Gaussian white noise. \cite{Torrence1998} show that such a process's wavelet power spectrum is $\chi^2$ distributed and therefore can be used to define a 95\% confidence interval for any observed power. 
 
-\subsection{Cross Wavelet Spectra}
+\subsubesection*{Cross Wavelet Spectra}
 The cross wavelet spectrum of two time series $x$ and $y$ with associated wavelet spectra $W^x_n$ and $W^y_n$ gives a measure of coincident power (the same period at the same timepoints) between the series. It is given by
 
 \begin{equation} \label{wavelet_cross}
@@ -137,10 +137,207 @@ X(t) = x(t) + \tilde{x}(t) i = A(t) e^{i\theta},
 
 where $A(t)$ is the instantaneous amplitude of the signal and $\theta(t)$ is the instantaneous phase angle - a measure of signal progression through a cycle at time $t$.
 
+\subsection{Statistical Methods}
+\label{sec:stat_tests}
 
-% Re-address aims from introduction
+\subsubsection*{Student's t-test}
+Much of the analysis presented in this chapter, and indeed in the whole thesis, involves comparisons of composite and mean quantities. A two-tailed student's t-test is implemented to test the null hypothesis that two sampled quantities, $x_1$ and $x_2$, with means $\overline{x}_1$ and $\overline{x}_2$ and standard deviations $\sigma_{1}$ and $\sigma_{2}$ are drawn from the same underlying normal distribution. A $t$ statistic is defined by $t = \frac{\overline{x}_1 - \overline{x}_2}{\sigma_{12} \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ where $n_i$ is the number of samples for quantity $i$ and $\sigma_{12}$ is the pooled variance for the two quantities given by $\sigma_{12} = \sqrt{\frac{\sigma^2_2 (n_2-1) + \sigma^2_1(n_1 - 1)}{n_1+n_2-2}}$. Significance on the difference in means can then be estimated by comparing the value of $t$ with a Student's t-distribution to give an associated $p$ value. Differences which give a $p$ value greater than a deemed level (normally 95\%) are deemed significant in which case the null hypothesis of identical means is rejected to this level.
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "thesis"
-%%% End:
+\subsubsection*{Linear Regression Analysis}
+We employ a multi-linear regression technique to give an estimate of the relative contributions to SSW variability from the QBO, ENSO and the AL following the method outlined in \cite{Krzywinski}. We model an SSW timeseries of length $n$ which we denote $y$ as 
+
+\begin{equation} \label{regression}
+\hat{y} = \beta_0 + \beta_{1}QBO + \beta_{2}ENSO + \beta_{3}AL
+\end{equation}
+
+where $\beta_j$ denotes the coefficient of the corresponding index and $\hat{y}$ is the prediction of $y$. We calculate the best estimate for each $\beta$ using an ordinary least square (OLS) estimator which minimises the sum of squared error (SSE) between the predicted $\hat{y}$ and the real time series $y$ with respect to each coefficient. the SSE is given by $SSE = \sum_i^n{(\hat{y}_i - y_i)^2}$.
+
+We can compare the estimated magnitude of the coefficient for each index to analyse the respective contributions to SSW variability. We can also calculate standard error ranges for $\beta$ estimates. The standard error on an estimated value of a true $\beta_j$ (denoted by $\hat{\beta_j}$) is given by 
+
+\begin{equation} \label{regression}
+se(\hat{\beta_j}) = \sqrt{\frac{SSR}{n - k} (X^TX)^{-1}_{jj}}
+\end{equation}
+
+where SSR is the sum of squared residuals which measures the sum of squared deviations of predicted values from the mean $y$ value, $\overline{y}$. This is given by $SSR = \sum_i^n{(\hat{y}_i - \overline{y})^2}$). $k$ is the number of predictors used in the linear model (in this case 3) and $X$ is an $n \times k$ matrix consisting of the predictor indices. We also define significance levels for $\hat{\beta_j}$ using a one-tailed $t$ statistic (similar to above) with $n-k$ degrees of freedom to test the null hypothesis that $\hat{\beta_j}$ = 0. The $t$ statistic is given by $t = \frac{\hat{\beta_j}}{se(\hat{\beta_j})}$.
+
+\subsubsection*{SSW Statistics}
+In order to assess model representation of vortex variability, we introduce a statistical framework which uses parametric and bootstrapping methods to asses significance levels for differences in SSW abundance across datasets. First, a parametric approach which assumes that the occurrence of any number of SSWs (denoted as $N$) in a given number of winters (denoted by $k$) can be modeled as a Poisson process and is distributed as 
+
+\begin{equation} \label{Poisson}
+P(N(k) = n) = \frac{(\lambda k)^n}{n!} e^{-\lambda k},
+\end{equation}
+
+where $\lambda$ is the intensity of the Poisson process calculated as the mean SSW rate over $k$ winters. For two such processes with intensities $\lambda_1$ and $\lambda_2$ the difference in intensity, $\Delta\lambda$ can be expressed as
+
+\begin{equation} \label{Poisson}
+\Delta\lambda = \frac{\lambda_1 - \lambda_2}{\sqrt{\frac{\lambda_1}{k_1} + \frac{\lambda2}{k_2}}},
+\end{equation}
+
+where $k_i$ is the number of instances of process $i$ (number of winters sampled). \cite{Charlton2007} suggest that if a pair of Poisson processes are recorded for more than 30 instances each then $\Delta\lambda$ can be assumed to be normally distributed. \cite{Gu} and \cite{Huffman} present an alternative test for the significance of $\Delta\lambda$ in cases where the datasets underlying each process are of different lengths (i.e. for comparing model and reanalysis data). For this analysis, we introduce the test statistic
+
+\begin{equation} \label{deltalambda}
+W(X_1, X_2) = 2 \frac{\sqrt{X_1 + 3/8} - \sqrt{\rho(X_2 - 3/8)}}
+{\sqrt{1 + \rho}},
+\end{equation}
+
+where $\rho$ is the ratio of observation lengths of the datasets and $X_i$ is the number of observations of events (number of SSWs) in dataset $i$. W is distributed with associated an $p$ value, 
+
+\begin{equation} \label{Pval}
+p = 1-2\psi(W(X_1, X_2)),
+\end{equation}
+
+where $\psi(W)$ is the cumulative distribution function of the normal distribution. This statistic provides a parametric test for significance between different SSW rates and the associated p-value is referred to as $P_{para}$ to distinguish it from other tests. 
+
+Additionally, we utilise a bootstrapping approach to test significance in SSW rate differences. For this method we assume two datasets produce a set of time series of the number of SSWs in each winter. These are denoted as $[X1,X2.....X_k]$ and $[Y1,Y2.....Y_j]$ and the mean SSW rate can be expressed as $\mu_X = \frac{\sum[X_1,X_2.....X_k]}{k}$. A confidence interval for an observed difference in mean SSW rate ($\Delta\mu = \mu_X - \mu_Y$) can be constructed by forming a pooled dataset, $Z = [X_1, X_2,....X_k,Y_1,Y_2,....Y_j]$ and randomly choosing (without replacement) synthetic datasets of the same length as $X$ and $Y$ from $Z$ and subsequently calculating synthetic mean differences. repeated choosing can build up a distribution for mean differences and a confidence interval for the real difference, $\Delta\mu$. We perform a set of 10000 random choices for this statistical test and the associated $p$ value is referred to as $P_{boot}$.
+
+
+\subsection{Model Diagnostics}
+We utilise the definition of an SSW event from \cite{Butler2015}. An event is recorded when the ZMZW at 60$^\circ$N on the 10\,hPa level transitions from westerly to easterly during NH winter months (November - March). The day on which this reversal occurs is referred to as the central date. After this date, the ZMZW must recover to westerly for a period of at least 10 consecutive days (which is the approximate radiative timescale of the mid-stratosphere) before another event can be recorded.  If, after the central date, the ZMZW does not recover to westerly for at least 20 consecutive days before the end of April, the warming is classified as a final warming. While we do record all events in extended winter (Nov-Mar) for an initial analysis of mean SSW rates, we use mid-late winter warmings (Dec-Mar) for our analysis of multi-decadal variability and interaction with other other climate variables (this choice is addressed in section \ref{sec:strat_var_UKESM}). We also use the NAM as a continuous metric for vortex strength following the methodology of \cite{baldwinStratospheric2001}. the $NAM_{10}$ index is defined as the leading Principle Component of the deseasonalised GPH field evaluated over the winter months (Dec-Mar, as with SSWs) on the 10hPa level. Utilising this metric gives the advantage of encoding both anomalously weak vortex winters (which include SSWs) as well as those in which the vortex is anomalously strong. In contrast, the use of the use of the ZMZW definition of an SSW gives a discretised metric of weak events (or absence of them) which may influence its spectral characteristics. This discretisation compared to the NAM definition is discussed in section xxxx.
+
+We analyse variability in tropical SSTs in four regions identified by \cite{Scaife2016} as key to affecting Rossby wave propagation and interactions with stratospheric winds. The regions are defined as the Tropical Atlantic ($5^{\circ}S$-$5^{\circ}N, 60^{\circ}W$–$0^{\circ}W$), Tropical East Pacific ($5^{\circ}S$–$10^{\circ}N, 160^{\circ}$–$270^{\circ}E$), Tropical West Pacific ($5^{\circ}S$–$25^{\circ}N, 110^{\circ}$–$140^{\circ}E$) and Tropical Indian Ocean ($5^{\circ}S$–$10^{\circ}N, 45^{\circ}$–$100^{\circ}E$). Additionally we calculate an El Ni\~{n}o Southern Oscillation (ENSO3.4) index as the SST anomaly in the region $5^{\circ}S$-$5^{\circ}N, 170^{\circ}W$–$120^{\circ}W$ following \cite{Trenberth2001}. We use an index to track the intensity of the Aleutian low pressure system based on the method of \cite{Chen2020} as the projection of the first Principal Component of winter mean sea level pressure (MSLP) anomalies averaged over the region $120^{\circ}$–$240^{\circ}E, 20^{\circ}$–$70^{\circ}N$. We employ an EOF based method as opposed to a fixed box average to allow for the fact that the centre of the model AL may not line up well with observations. The month range used for studies into AL-vortex teleconnections varies somewhat with \cite{Overland1999} using both Jan-Feb and Nov-Mar while \cite{Hu2018} use a core winter metric (Dec-Feb). Unless stated otherwise we use the same month range as our SSW definition (Dec-Mar); for all analyses, tests were performed to check that the results were not unduly sensitive to the choice. An index for the Pacific Decadal Oscillation (PDO) was determined following the methodology of \cite{Mantua_1997} using the leading Principal Component of Pacific basin ($120^{\circ}$–$240^{\circ}E$) SST anomalies poleward of 20$^{\circ}$N. Finally, a QBO index was defined by a variety of measures (see section 3 for further discussion), using the monthly mean ZMZW averaged between $\pm5^{\circ}$ latitudes at various stratospheric pressure levels (15\,hPa, 20\,hPa, 30\,hPa, 50\,hPa, 70\,hPa) as well as two 'deep QBO' indices computed  by taking the average of the ZMZW between  15-30\,hPa (as in \cite{}) and between 20-50\,hPa to identify QBO phases that exhibit winds of the same sign over a relatively large vertical extent. 
+
+\section{Results}
+\subsection{Modes of Stratospheric Variability}
+\label{sec:strat_var_UKESM}
+We begin by analysing the representation of modes of stratospheric variability in the UKESM piControl simulation. As described in section 1, the winter polar stratospheric vortex  exhibits substantial variability. In some years the westerly winds of the vortex are relatively strong and undisturbed while in other years the vortex is weakened by wave disturbances that in extreme cases can lead to SSWs. The average Nov-Mar SSW rate over the full 1000 years of the UKESM simulation is 0.54 events/winter. This represents a marginal underestimation compared to ERA-Interim (0.62 events/winter between 1979 and 2019) but is within 1 standard error of the observations. The model adequately represents the seasonal distribution of SSWs compared to the reanalysis dataset, as shown in figure 1, but exhibits too many warming events in November (not shown) and an underestimation of Jan and Feb warming rates (see \cite{Andrews2020} and \cite{Menary2018} for further details). This bias is well known and relatively common in GCMs \citep{Charlton2007, Ayarz2020}. On the other hand, we note that validation of this pre-industrial control simulation with ERA-Interim data is not optimum. The sample sizes of the ERA-interim data and the model are very different and could give rise to differences in distributions \citep{Horan2017} and the ERA-Interim SSW rates may be influenced by anthropogenic forcing, the impact of which is not well understood \citep{Ayarz2020}. In all analyses presented in the following sections, tests have been performed to ensure that the results are not sensitive to the inclusion or exclusion of November SSW rates. 
+
+\begin{center}
+\begin{figure}[h!]
+\noindent\includegraphics[width = 0.5\linewidth]{f01.png}
+\caption{SSWs per NH winter season separated by month within the UKESM pi-control and ERA-Interim datasets. Error bars are derived using a bootstrap re-sampling method in which random selections of 50 years are chosen from the SSW data and the SSW rate recorded to build a PDF of events per season. 10000 such re-samples are carried out and the 97.5 and 2.5 percentile values are used as error bounds.}
+\label{fig1}
+\end{figure}
+\end{center}
+
+The model exhibits variability in SSW frequency comparable to observations, including both hiatus and consecutive SSW intervals. Figure 2 shows a sample 40-yr interval of the polar vortex zonal wind strength from the UKESM simulation compared with a similar length from the ERA Interim reanalyses. An extended interval of mainly westerly anomalies indicating a strengthened vortex and lack of SSWs can be seen towards the end of the 40-yr interval, similar to the 1990s in ERA-Interim when only 2 SSW events were recorded in the decade. The simulation contains 8 such hiatus intervals with at least 10 consecutive years with no SSWs, the longest of which lasts 16 years. On the other hand, the simulation only contains 2 intervals in which 10 consecutive years exhibit at least 1 SSW. However, if the threshold interval width for identifying hiatus and consecutive-SSW intervals is shortened from 10 to 5 years,  then 9 consecutive-SSW intervals and 25 hiatus intervals are found. These statistics indicate that UKESM is not only able to reproduce the mean state characteristics of SSW events but also decadal-scale variations in SSW rate, underlining its  suitability for this study. 
+
+The second major mode of stratospheric variability is the QBO at equatorial latitudes which is present at all times of the year. Figure 3 shows the equatorial wind time-series from a sample 40-yr interval of the simulation compared with the ERA-Interim dataset. The mean period of the oscillation is longer than observed, at $\sim$38 months compared to $\sim$28 months in ERA-Interim \citep{Kawatani2016}. As a result the vertical shear zones descend less rapidly than observed. There is also a westerly bias at low levels where the QBO-E phase does not extend sufficiently deep into the lower stratosphere, which is a common bias in many models \citep{Bushell2020}. The descending shear zones also appear more regular than observed but there is nevertheless some evidence of decadal-scale variations e.g. in the degree of stalling at 30\ hPa, although not as pronounced as in the observations.
+
+\begin{center}
+\begin{figure}[h!]
+\noindent\includegraphics[width = \linewidth]{f02.png}
+\caption{\textbf{(a, b)}: Dec-Mar annual mean ZMZW anomaly from the climatological mean at 60$^\circ$\,N from a 40 year sample from the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. \textbf{(c, d)}: Time series of SSWs recorded per winter season in the same datasets.}
+\label{fig1}
+\end{figure}
+\end{center}
+
+%---------------------------------------------------------------
+
+\begin{center}
+\begin{figure}[h!]
+\noindent\includegraphics[width = 0.8\linewidth]{f03.png}
+\caption{ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from from a 40 year sample of the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)} Horizontal lines mark the 15\,hPa and 30\,hPa levels between which the deep QBO metric employed by \cite{Andrews2019} is defined.}
+\label{fig1}
+\end{figure}
+\end{center}
+
+
+%---------------------------------------------------------------
+
+There is evidence of coupling between the two major modes of stratospheric variability in the model, giving rise to a Holton-Tan relationship \citep{Anstey20}. Figure 4 shows height-latitude cross-sections of NH winter zonal wind differences between QBO E-W composites defined at various equatorial levels. The familiar pancake structure of alternating easterly / westerly differences is present at equatorial latitudes, indicative of the QBO phase but there is also a response at high latitudes. In good agreement with observations the largest high latitude response amplitude is seen when  the QBO is defined at 50hPa, with anomalously weaker polar vortex strength in QBO-E than in QBO-W years. Higher levels (15\,hPa and 20\,hPa) show little significant QBO-vortex coupling. For comparison we also show in figure 4 the composite different response for QBO composites selected on the basis of the average QBO winds over a greater depth of the equatorial atmosphere (15-30 hPa and 20-50 hPa). We note that while this QBO definition will select some of the same years as in the separate single-level composite definitions, it is specifically designed to identify only QBO  phases that have extended vertical coherence, following \citep{Gray2018} and \cite{Andrews2019}, so the resulting composite  differences in figure 4 will not necessarily be an average of the corresponding single-level differences.   Interestingly, the 15--30 hPa deep-QBO selects years that exhibit not only a weaker polar vortex in QBO-E but also a weaker sub-tropical tropospheric jet (see 200 hPa, 30--40N). This results in a more coherent response in the mid-latitude troposphere and at the surface, in excellent agreement with the results of \cite{Gray2018} and \cite{Andrews2019}. 
+
+%---------------------------------------------------------------
+
+\begin{center}
+\begin{figure}[h!]
+\noindent\includegraphics[width = 0.85\linewidth]{f04.png}
+\caption{Dec-Mar ZMZW composite differences between QBO East and QBO West phases evaluated in Sep-Oct at individual levels as well as using the deep QBO metric. The phase of the QBO is defined as in figure 1 - the equatorial Sep-Nov ZMZW of greater magnitude than 5\ m\,s$^{-1}$. Coloured shading indicates differences significant above the 95\% confidence level under a 2 tail student’s t-test.}
+\label{fig1}
+\end{figure}
+\end{center}
+
+The presence of the Holton-Tan relationship is also seen in the modelled frequency of SSWs (figures 5). Significantly higher rates are observed in QBO-E winters than QBO-W. Also notable is the asymmetry in abundance of QBO-E and QBO-W winters - nearly twice as many QBO-E winters are observed compared to QBO-W under all phase definitions (figure 5, legends). This suggests an element of phase locking between the QBO and the seasonal cycle possibly associated with seasonally variations in the strength of mean equatorial upwelling or mid-latitude planetary wave forcing in winter \citep{Pascoe2005, Gruzdez2000, Kylash2015} resulting in QBO phase transitions that occur preferentially in certain months. 
+
+\begin{center}
+\begin{figure}[h!]
+\noindent\includegraphics[width = 0.7\linewidth]{f05.png}
+\caption{SSWs per winter season for years exhibiting QBO-E and QBO-W conditions in early winter (Sep-Nov) defined on different pressure levels (a,b) as well as using the deep metric (c), the vertical mean between 15 and 30\,hPa defined in \cite{Andrews2019}. The QBO phase is defined as any Sep-Nov equatorial ($5^{\circ}$\ S--$5^{\circ}\ $N average) ZMZW that exceeds a magnitude of 5\ m\,s$^{-1}$. Error bars on all plots are derived using the same bootstrapping method outlined in figure 1.}
+\label{fig1}
+\end{figure}
+\end{center}
+
+
+
+
+
+\subsection{Vortex-QBO Interactions}
+Despite some coincident signals between tropical SSTs, AL and $SSW_{5yr}$, long-term variability in these surface indices are unable to fully account for the  multidecadal signals in SSW frequency. An additional potential source of internally generated long-term variability may reside within the stratosphere. Studies have noted relatively long-term variations in the strength of the Holton-Tan relationship \citep{Lu2008, Lu14, OspEA10} although the cause of these variations is not well understood. In order to investigate this figure 10 shows the wavelet power spectrum of early winter (Sep-Nov) QBO winds evaluated at selected levels. Since the QBO evolves relatively slowly, employing Sep-Nov averaged winds provides a reasonable representation of the QBO and also allows us to evaluate the in-season lagged relationship between the QBO and subsequent occurrence of an SSW. There is a clear signal between 2 and 4 years for the majority of the simulation, as expected, but no prominent power at longer periods,  confirming that there is no significant long-term variability in the periodicity of the QBO winds that could explain the long-term variations in $SSW_{5yr}$ via the Holton-Tan relationship.
+
+\begin{center}
+\begin{figure}[h!]
+\noindent\includegraphics[width = \linewidth]{Figures/Figures-origins/QBO_levels.png}
+\caption{\textbf{(a-f)}: Sep-Nov mean ZMZW averaged between 5$^\circ$S--5$^\circ$N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure 6 and yellow contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
+\label{QBO_levs}
+\end{figure}
+\end{center}
+
+%---------------------------------------------------------------
+
+While the wavelet analysis technique is able to isolate and reveal frequency modulations very well it is less suited to examine amplitude modulations which are clearly evident by eye in some of the QBO index time-series. For example, both the 20 hPa and deep (15-30 hPa) QBO time series show multi-decadal variations in the magnitude of the westerly phase while the easterly phase amplitudes are relatively uniform in time. Similarly, the 50\,hPa and 30\,hPa time series show amplitude modulation predominantly in the easterly phase. This amplitude modulation can be highlighted by taking the Hilbert Transform of each QBO time-series (figure 11a-f). Wavelet analysis of the transformed QBO time series now shows significant power on multidecadal timescales (figure 11g-l). In particular, the 20\,hPa and deep QBO time-series exhibit signals coincident in time and around similar periods (60-90 years) to those observed in $SSW_5yr$. On the other hand, the QBO indices based on equatorial winds at 50\,hPa or 30\,hPa show minimal power at these periods, despite showing a strong intraseasonal HT relationship (figure 4). Given that the 15-30 hPa deep QBO  index exhibits  both multidecadal timescale variability and a strong intraseasonal HT coupling, we continue further analysis of the SSW-QBO interactions using the 15-30 hPa index. 
+
+%---------------------------------------------------------------
+
+\begin{center}
+\begin{figure}[h!]
+\includegraphics[width = \linewidth]{Figures/Figures-origins/QBO_levels_amp.png}
+\caption{\textbf{(a-e)}: Hilbert amplitude of Sep-Nov mean ZMZW averaged between 5$^\circ$\,S--5$^\circ$\,N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure 6 and yellow contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
+\label{QBO_levs_amp}
+\end{figure}
+\end{center}
+
+%---------------------------------------------------------------
+
+Wavelet analysis of the 5-year smoothed deep (15-30\,hPa) QBO amplitude modulation index (figure 12a) enhances the clarity of the long-term periodicity, showing statistically significant power at around 90 years in the interval between year numbers 500-800. The cross power between $SSW_5yr$ and this QBO amplitude modulation index (figure \ref{fig:QBO_SSW_subfig}) coincides extremely well with the signals observed in $SSW_5yr$ at around 90 years. There are also coincident features at other timescales, although the feature between years 450-550 at periods of 60 years is less well captured. The phase-relationship arrows in the main region of long-term variability (periods around 90 years in the interval 450-800 years) point broadly to the left ($\pi$ phase shift), indicating that the signals are approximately anti-phased (the slight downward pointing of the arrows suggests a small deviation from this lag-zero relationship and is discussed below). The anti-phase relationship is consistent with the HT relationship in which a westerly (positive) QBO anomaly corresponds to a reduction in the frequency of SSWs.
+
+%---------------------------------------------------------------
+
+\begin{center}
+\begin{figure}[h!]
+\includegraphics[width = \textwidth]{Figures/Figures-origins/QBO_levels_amp.png}
+\caption{As figure 8 for the Sep-Nov deep QBO (15--30\,hPa) amplitude index smoothed with a 5 year window. \textbf{a}: QBO amplitude time series and associated wavelet power spectrum,\textbf{b}: Cross power spectrum between deep QBO amplitude and $SSW_5yr$.}
+\label{fig:QBO_SSW_subfig}
+\end{figure}
+\end{center}
+
+%---------------------------------------------------------------
+
+
+In our earlier discussion we linked long-term variability in SSW frequency to the existence of extended hiatus periods, during which the vortex is relatively undisturbed with no SSW events (figure 2). The cross-spectrum analysis with deep QBO amplitude modulation suggests a possible physical interpretation involving the Holton-Tan relationship varying on longer timescales, in which a series of consecutive years that exhibit a large amplitude, deep westerly QBO in early winter leads to a series of winters with reduced SSW frequency i.e. a hiatus period. Correspondingly a series of large-amplitude deep easterly QBO years would lead to a series of consecutive-event years.
+
+We verify the results of the wavelet analyses described above by repeating the multi-linear regression (table 1) but using the 5-year smoothed QBO, ENSO and AL indices to measure their  relative contributions to the 5-year smoothed  $SSW_5yr$ time-series. The resulting regression coefficients for the deep QBO amplitude and AL remain significant at the 95\% level, although the AL's contribution remains small and close to the significance boundary. The coefficient for ENSO3.4 is not significant, suggesting that the connection between this ENSO index and the vortex variability is dominated by timescales less than 5 years. If we further isolate multi-decadal signals by fourier filtering each timeseries, so that only periodicities longer than 60 years are retained, the ENSO3.4 coefficient is near 0 while the deep QBO amplitude signal is near -0.2. This is consistent with our wavelet analysis which suggest a dominant role for QBO amplitude variations on these long timescales. The AL coefficient remains significant but smaller than that of the QBO (and outside error ranges). For completeness, we repeated the regression analysis using a 5-year smoothed PDO index instead of the AL but there was no significant change in the coefficients (not shown). This is consistent with the fact that the AL and PDO indices exhibit similar spectra and there is a high correlation between them (-0.45 unfiltered and -0.68 filtered), as also found by \cite{mantuaPacific1997} and \cite{rodionovSpatial2005}. 
+
+\begin{table}
+\centering
+\begin{tabular}{|p{3cm}||p{3cm}|p{3cm}|}
+ \hline
+ \multicolumn{3}{|c|}{SSW$_{5yr}$ regression}\\
+ \hline
+ Regression Variable& Coefficient& p value\\
+ \hline
+ ENSO3.4  & -0.0127$\pm$0.032& 0.688\\
+ AL  &   -0.072$\pm$0.021  & 0.046\\
+ deep QBO amp &-0.124$\pm$0.031&0.0001\\
+ \hline
+\end{tabular}
+\begin{center}
+\caption{Summary of results from multi-linear regression analysis of SSW$_{5yr}$.} 
+\end{center}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|p{3cm}||p{3cm}|p{3cm}|}
+ \hline
+ \multicolumn{3}{|c|}{Filtered (>60 year periods) SSW$_{5yr}$ regression}\\
+ \hline
+ Regression Variable& Coefficient& p value\\
+ \hline
+ ENSO3.4  &   $\sim$0$\pm$0.01  & $\sim$1\\
+ AL & -0.0794$\pm$0.03& 0.042\\
+ deep QBO amp &-0.199$\pm$0.01&0.00003\\
+ \hline
+\end{tabular}
+\begin{center}
+\caption{Summary of results from multi-linear regression analysis of a fourier filtered  version of SSW$_{5yr}$ retaining power corresponding to periods greater than 60 years.}  
+\end{center}
+\end{table}
