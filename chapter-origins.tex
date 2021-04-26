@@ -194,7 +194,7 @@ Additionally, we utilise a bootstrapping approach to test significance in SSW ra
 \subsection{Model Diagnostics}
 We utilise the definition of an SSW event from \cite{Butler2015}. An event is recorded when the ZMZW at 60$^\circ$N on the 10\,hPa level transitions from westerly to easterly during NH winter months (November - March). The day on which this reversal occurs is referred to as the central date. After this date, the ZMZW must recover to westerly for a period of at least 10 consecutive days (which is the approximate radiative timescale of the mid-stratosphere) before another event can be recorded.  If, after the central date, the ZMZW does not recover to westerly for at least 20 consecutive days before the end of April, the warming is classified as a final warming. While we do record all events in extended winter (Nov-Mar) for an initial analysis of mean SSW rates, we use mid-late winter warmings (Dec-Mar) for our analysis of multi-decadal variability and interaction with other other climate variables (this choice is addressed in section \ref{sec:strat_var_UKESM}). We also use the NAM as a continuous metric for vortex strength following the methodology of \cite{baldwinStratospheric2001}. the $NAM_{10}$ index is defined as the leading Principle Component of the deseasonalised GPH field evaluated over the winter months (Dec-Mar, as with SSWs) on the 10hPa level. Utilising this metric gives the advantage of encoding both anomalously weak vortex winters (which include SSWs) as well as those in which the vortex is anomalously strong. In contrast, the use of the use of the ZMZW definition of an SSW gives a discretised metric of weak events (or absence of them) which may influence its spectral characteristics. This discretisation compared to the NAM definition is discussed in section xxxx.
 
-We analyse variability in tropical SSTs in four regions identified by \cite{Scaife2016} as key to affecting Rossby wave propagation and interactions with stratospheric winds. The regions are defined as the Tropical Atlantic ($5^{\circ}S$-$5^{\circ}N, 60^{\circ}W$–$0^{\circ}W$), Tropical East Pacific ($5^{\circ}S$–$10^{\circ}N, 160^{\circ}$–$270^{\circ}E$), Tropical West Pacific ($5^{\circ}S$–$25^{\circ}N, 110^{\circ}$–$140^{\circ}E$) and Tropical Indian Ocean ($5^{\circ}S$–$10^{\circ}N, 45^{\circ}$–$100^{\circ}E$). Additionally we calculate an El Ni\~{n}o Southern Oscillation (ENSO3.4) index as the SST anomaly in the region $5^{\circ}S$-$5^{\circ}N, 170^{\circ}W$–$120^{\circ}W$ following \cite{Trenberth2001}. We use an index to track the intensity of the Aleutian low pressure system based on the method of \cite{Chen2020} as the projection of the first Principal Component of winter mean sea level pressure (MSLP) anomalies averaged over the region $120^{\circ}$–$240^{\circ}E, 20^{\circ}$–$70^{\circ}N$. We employ an EOF based method as opposed to a fixed box average to allow for the fact that the centre of the model AL may not line up well with observations. The month range used for studies into AL-vortex teleconnections varies somewhat with \cite{Overland1999} using both Jan-Feb and Nov-Mar while \cite{Hu2018} use a core winter metric (Dec-Feb). Unless stated otherwise we use the same month range as our SSW definition (Dec-Mar); for all analyses, tests were performed to check that the results were not unduly sensitive to the choice. An index for the Pacific Decadal Oscillation (PDO) was determined following the methodology of \cite{Mantua_1997} using the leading Principal Component of Pacific basin ($120^{\circ}$–$240^{\circ}E$) SST anomalies poleward of 20$^{\circ}$N. Finally, a QBO index was defined by a variety of measures (see section 3 for further discussion), using the monthly mean ZMZW averaged between $\pm5^{\circ}$ latitudes at various stratospheric pressure levels (15\,hPa, 20\,hPa, 30\,hPa, 50\,hPa, 70\,hPa) as well as two 'deep QBO' indices computed  by taking the average of the ZMZW between  15-30\,hPa (as in \cite{andre}) and between 20-50\,hPa to identify QBO phases that exhibit winds of the same sign over a relatively large vertical extent. 
+We analyse variability in tropical SSTs in four regions identified by \cite{scaifeTropical2017} as key to affecting Rossby wave propagation and interactions with stratospheric winds. The regions are defined as the Tropical Atlantic ($5^{\circ}S$-$5^{\circ}N, 60^{\circ}W$–$0^{\circ}W$), Tropical East Pacific ($5^{\circ}S$–$10^{\circ}N, 160^{\circ}$–$270^{\circ}E$), Tropical West Pacific ($5^{\circ}S$–$25^{\circ}N, 110^{\circ}$–$140^{\circ}E$) and Tropical Indian Ocean ($5^{\circ}S$–$10^{\circ}N, 45^{\circ}$–$100^{\circ}E$). Additionally we calculate an El Ni\~{n}o Southern Oscillation (ENSO3.4) index as the SST anomaly in the region $5^{\circ}S$-$5^{\circ}N, 170^{\circ}W$–$120^{\circ}W$ following \cite{trenberthIndices2001}. We use an index to track the intensity of the Aleutian low pressure system based on the method of \cite{chenPotential2020} as the projection of the first Principal Component of winter mean sea level pressure (MSLP) anomalies averaged over the region $120^{\circ}$–$240^{\circ}E, 20^{\circ}$–$70^{\circ}N$. We employ an EOF based method as opposed to a fixed box average to allow for the fact that the centre of the model AL may not line up well with observations. The month range used for studies into AL-vortex teleconnections varies somewhat with \cite{overlandDecadal1999} using both Jan-Feb and Nov-Mar while \cite{huDecadal2018} use a core winter metric (Dec-Feb). Unless stated otherwise we use the same month range as our SSW definition (Dec-Mar); for all analyses, tests were performed to check that the results were not unduly sensitive to the choice. An index for the Pacific Decadal Oscillation (PDO) was determined following the methodology of \cite{mantuaPacific1997} using the leading Principal Component of Pacific basin ($120^{\circ}$–$240^{\circ}E$) SST anomalies poleward of 20$^{\circ}$N. Finally, a QBO index was defined by a variety of measures (see section 3 for further discussion), using the monthly mean ZMZW averaged between $\pm5^{\circ}$ latitudes at various stratospheric pressure levels (15\,hPa, 20\,hPa, 30\,hPa, 50\,hPa, 70\,hPa) as well as two 'deep QBO' indices computed  by taking the average of the ZMZW between  15-30\,hPa (as in \cite{andrewsObserved2019}) and between 20-50\,hPa to identify QBO phases that exhibit winds of the same sign over a relatively large vertical extent. 
 
 \section{Results}
 \subsection{Modes of Stratospheric Variability}
@@ -216,20 +216,20 @@ The second major mode of stratospheric variability is the QBO at equatorial lati
 \begin{center}
 \begin{figure}[h!]
 \noindent\includegraphics[width = \linewidth]{f02.png}
-\caption{\textbf{(a, b)}: Dec-Mar annual mean ZMZW anomaly from the climatological mean at 60$^\circ$\,N from a 40 year sample from the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. \textbf{(c, d)}: Time series of SSWs recorded per winter season in the same datasets.}
+\caption[Vortex ZMZW and SSW time series from ERA-Interim]{\textbf{(a, b)}: Dec-Mar annual mean ZMZW anomaly from the climatological mean at 60$^\circ$\,N from a 40 year sample from the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. \textbf{(c, d)}: Time series of SSWs recorded per winter season in the same datasets.}
 \label{fig1}
 \end{figure}
 \end{center}
 
 %---------------------------------------------------------------
 
-\begin{center}
+\centering
 \begin{figure}[h!]
-\noindent\includegraphics[width = 0.8\linewidth]{f03.png}
-\caption{ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from from a 40 year sample of the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)} Horizontal lines mark the 15\,hPa and 30\,hPa levels between which the deep QBO metric employed by \cite{Andrews2019} is defined.}
-\label{fig1}
+\noindent\includegraphics[width = 0.8\linewidth]{Figures/Figures-origins/equatorial_U_UKESM_ERA.png}
+\caption[Time-height profiles for equatorial ZMZW in UKESM and ERA-Interim.] {ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from from a 40 year sample of the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. Horizontal lines mark the 15\,hPa and 30\,hPa levels between which the deep QBO metric employed by \cite{andrewsObserved2019} is defined.}
+\label{equatorial_U_sample}
 \end{figure}
-\end{center}
+\centering
 
 
 %---------------------------------------------------------------
@@ -241,7 +241,7 @@ There is evidence of coupling between the two major modes of stratospheric varia
 \begin{center}
 \begin{figure}[h!]
 \noindent\includegraphics[width = 0.85\linewidth]{f04.png}
-\caption{Dec-Mar ZMZW composite differences between QBO East and QBO West phases evaluated in Sep-Oct at individual levels as well as using the deep QBO metric. The phase of the QBO is defined as in figure 1 - the equatorial Sep-Nov ZMZW of greater magnitude than 5\ m\,s$^{-1}$. Coloured shading indicates differences significant above the 95\% confidence level under a 2 tail student’s t-test.}
+\caption[ZMZW composite differences between QBO phases in UKESM.]{Dec-Mar ZMZW composite differences between QBO East and QBO West phases evaluated in Sep-Oct at individual levels as well as using the deep QBO metric. The phase of the QBO is defined as in figure 1 - the equatorial Sep-Nov ZMZW of greater magnitude than 5\ m\,s$^{-1}$. Coloured shading indicates differences significant above the 95\% confidence level under a 2 tail student’s t-test.}
 \label{fig1}
 \end{figure}
 \end{center}
@@ -251,7 +251,7 @@ The presence of the Holton-Tan relationship is also seen in the modelled frequen
 \begin{center}
 \begin{figure}[h!]
 \noindent\includegraphics[width = 0.7\linewidth]{f05.png}
-\caption{SSWs per winter season for years exhibiting QBO-E and QBO-W conditions in early winter (Sep-Nov) defined on different pressure levels (a,b) as well as using the deep metric (c), the vertical mean between 15 and 30\,hPa defined in \cite{Andrews2019}. The QBO phase is defined as any Sep-Nov equatorial ($5^{\circ}$\ S--$5^{\circ}\ $N average) ZMZW that exceeds a magnitude of 5\ m\,s$^{-1}$. Error bars on all plots are derived using the same bootstrapping method outlined in figure 1.}
+\caption[Histogram of SSWs per winter in different QBO phases in UKESM.]{SSWs per winter season for years exhibiting QBO-E and QBO-W conditions in early winter (Sep-Nov) defined on different pressure levels (a,b) as well as using the deep metric (c), the vertical mean between 15 and 30\,hPa defined in \cite{Andrews2019}. The QBO phase is defined as any Sep-Nov equatorial ($5^{\circ}$\ S--$5^{\circ}\ $N average) ZMZW that exceeds a magnitude of 5\ m\,s$^{-1}$. Error bars on all plots are derived using the same bootstrapping method outlined in figure 1.}
 \label{fig1}
 \end{figure}
 \end{center}
@@ -266,7 +266,7 @@ Despite some coincident signals between tropical SSTs, AL and $SSW_{5yr}$, long-
 \begin{center}
 \begin{figure}[h!]
 \noindent\includegraphics[width = \linewidth]{Figures/Figures-origins/QBO_levels.png}
-\caption{\textbf{(a-f)}: Sep-Nov mean ZMZW averaged between 5$^\circ$S--5$^\circ$N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure 6 and yellow contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
+\caption[QBO timeseries and associated wavelet power spectra at different levels in UKESM]{\textbf{(a-f)}: Sep-Nov mean ZMZW averaged between 5$^\circ$S--5$^\circ$N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure 6 and yellow contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
 \label{QBO_levs}
 \end{figure}
 \end{center}
@@ -280,7 +280,7 @@ While the wavelet analysis technique is able to isolate and reveal frequency mod
 \begin{center}
 \begin{figure}[h!]
 \includegraphics[width = \linewidth]{Figures/Figures-origins/QBO_levels_amp.png}
-\caption{\textbf{(a-e)}: Hilbert amplitude of Sep-Nov mean ZMZW averaged between 5$^\circ$\,S--5$^\circ$\,N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure 6 and yellow contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
+\caption[QBO amplitude timeseries and associated wavelet power spectra at different levels in UKESM]{\textbf{(a-e)}: Hilbert amplitude of Sep-Nov mean ZMZW averaged between 5$^\circ$\,S--5$^\circ$\,N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure 6 and yellow contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
 \label{QBO_levs_amp}
 \end{figure}
 \end{center}
@@ -294,7 +294,7 @@ Wavelet analysis of the 5-year smoothed deep (15-30\,hPa) QBO amplitude modulati
 \begin{center}
 \begin{figure}[h!]
 \includegraphics[width = \textwidth]{Figures/Figures-origins/QBO_levels_amp.png}
-\caption{As figure 8 for the Sep-Nov deep QBO (15--30\,hPa) amplitude index smoothed with a 5 year window. \textbf{a}: QBO amplitude time series and associated wavelet power spectrum,\textbf{b}: Cross power spectrum between deep QBO amplitude and $SSW_5yr$.}
+\caption[Wavelet and cross spectra for the deep QBO amplitude in UKESM.]{As figure 8 for the Sep-Nov deep QBO (15--30\,hPa) amplitude index smoothed with a 5 year window. \textbf{a}: QBO amplitude time series and associated wavelet power spectrum,\textbf{b}: Cross power spectrum between deep QBO amplitude and $SSW_5yr$.}
 \label{fig:QBO_SSW_subfig}
 \end{figure}
 \end{center}
