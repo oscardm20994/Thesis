@@ -46,6 +46,7 @@
 
 % bitstream charter
 \usepackage[T1]{fontenc} 
+\usepackage{lipsum}
 %\usepackage[latin1]{inputenc}
 %\usepackage[bitstream-charter]{mathdesign}
 %\usepackage[urw-garamond]{mathdesign}
@@ -90,6 +91,10 @@
 
 %appendices in chapters
 \usepackage{appendix}
+
+%package for quotation page
+\usepackage{lmodern}
+
 
 %to surpress page numbers on full page figs 
 %\usepackage{floatpag}
@@ -140,6 +145,7 @@
 
 %load any additional packages
 \usepackage{amssymb}
+
 \usepackage[authoryear]{natbib}
 \setcitestyle{square}
 %\bibliographystyle{abbrvnat}
@@ -176,9 +182,8 @@
 
 
 \maketitle                  % create a title page from the preamble info
-%\nclude{dedication}        % include a dedication.tex file
 \include{abstract}          % include the abstract
-\include{acknowledgements}   % include an acknowledgements.tex file
+\include{acknowledgements}  % include an acknowledgements.tex file
 
 
 \baselineskip=14pt plus4pt % as HA
