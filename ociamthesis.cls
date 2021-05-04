@@ -127,15 +127,14 @@
 % own page and is set out in verse format.
 
 \newenvironment{dedication}
-{\begin{alwayssingle}
-  \thispagestyle{empty}
+{\thispagestyle{empty}
   \begin{center}
   \vspace*{1.5cm}
   {\LARGE }
   \end{center}
   \vspace{0.5cm}
   \begin{verse}\begin{center}}
-{\end{center}\end{verse}\end{alwayssingle}}
+{\end{center}\end{verse}}
 
 
 % ACKNOWLEDGEMENTS
