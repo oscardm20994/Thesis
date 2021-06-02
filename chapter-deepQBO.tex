@@ -31,8 +31,32 @@ F(z) = R_D \frac{1}{\gamma \beta^\alpha}  Z_D^{\alpha-1}  e^{-Z_D/\beta},
 
 where the parameters are set to $\alpha = 3.5, \beta = 0.27, \gamma = 3.2335, R_D = 40.0 ms^{-1}, Z_{D} = (z - 15)/20$. The idealised time-height QBO profiles generated for both experiments are shown in figure xxxxa, they highlight the differences between idealised QBOs: The deep QBO winds exhibits the same sign of wind throughout the middle atmosphere for the majority of the series while the shallow QBO show different phases between the upper and middle stratosphere. In both experiments we apply the relaxation in equation \ref{eq:nudging} towards the corresponding QBO winds over the set of atmospheric levels approximately corresponding to the pressure level range xx-xxhPa and the latitudinal range xx-xx. The relaxation is applied at all longitudes. At the boundary between of these ranges we apply a tapered version of the relaxation with a value of that parameter $G$ that decreases linearly with increased distance from the relaxation region. This tapering is applied on the 2 atmospheric levels at the bottom and top of the vertical region and 5$^\circ$ either side of the latitudinal region. This tapering is applied to avoid introducing large vertical and latitudinal gradients in zonal wind and prevent potential model instability. 
 
+\begin{figure}[h!]
+\begin{center}
+\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/Idealised_QBO_features.png}
+\caption[Idealised QBO winds used for nudging experiments]{Sample time-series of idealised equatorial ZMZW and associated momentum forcing profile for the deep (\textbf{a} and \text{b} respectively) and shallow (\textbf{c} and \textbf{d} respectively) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
+\label{fig:Idealised_QBO_samples}
+\end{center}
+\end{figure}
+
+
 \section{Results}
 \subsection{QBO Characteristics}
+We first analyse the equatorial winds in each experiment and verify if the implementation of nudging has resulted in realistic ZMZW profiles. Figure \ref{experiment_QBO_samples} shows the equatorial winds that results from implementing QBO nudging between the xxhPa and xxhPa levels. These winds reflect the key features of the idealised winds (figure \ref{fig:Idealised_QBO_samples}a and c) - the deep experiment exhibits vertical coherence in the middle stratosphere while the shallow simulation shows opposite phases of the QBO in the upper and lower stratosphere. This indicates that the selection of nudging timescale, $\tau$ = 6 hours, is suitable to fix the state of the QBO in each experiment. 
+
+- notable SAO anomalies
+
+- show winter climatology of each experiment which reflects the SAO anomalies. This could give an indication towards the 
+
+\begin{figure}[h!]
+\begin{center}
+\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/Idealised_QBO_features.png}
+\caption[Idealised QBO winds used for nudging experiments]{Sample time-series of idealised equatorial ZMZW and associated momentum forcing profile for the deep (\textbf{a} and \text{b} respectively) and shallow (\textbf{c} and \textbf{d} respectively) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
+\label{fig:Idealised_QBO_samples}
+\end{center}
+\end{figure}
+
+We need to show first that the nudging we have implemented has resulted in realistic winds in the model. We don't want the idealised nudging to have 'messed up' other regions e.g. the SAO. We can use ERA-Interim composites to do this.
 
 Fig1 - Nudged equatorial winds in each experiment as well as possible ERA-Interim or the pi-clim control for UKESM. Demonstrate that the nudging scheme has been effective in fixing the winds over the correct pressure level range. possibly include some height-period Fourier spectra for each QBO. 
 
