@@ -17,7 +17,7 @@ In order to impose the vertical structure of the QBO in our sensitivity experime
 \Delta Y = G \Delta t (Y_{imposed} - Y_{model}), 
 \end{equation}
 
-where $Y_{imposed}$ is the state of $Y$ from the imposed field, $Y_{model}$ is the value of $Y$ the model has evolved to since the last timestep (when it was last nudged), $\Delta Y$ is the change in $Y$ applied by the nudging scheme and $G$ is the relaxation parameter. $G$ is a measure of the strength of the relaxation towards $Y_{imposed}$ at each timestep and can also be expressed as $G = \frac{1}{\tau}$ where $\tau$ is known as the relaxation timescale. When choosing the relaxation timescale, a balance is required between constraining the model sufficiently to the imposed state (I.E. a short enough $\tau$ such that the model $Y$ avoids evolving freely) and avoiding the introduction of large gradients (a large enough $\tau$ to avoid model instability). The MetOffice Unified model, of which the model configurations presented here are a part, typically uses a relaxation timescale of 6 hours at all vertical levels. This has been shown to produce good quality nudging results in a range of studies employing such a method despite the different radiative timescales present across atmospheric levels (Brown et al. 2020). In our experiments we to nudge the zonal wind, $U$, towards an idealised version of the QBO wind fields expressed as 
+where $Y_{imposed}$ is the state of $Y$ from the imposed field, $Y_{model}$ is the value of $Y$ the model has evolved to since the last timestep (when it was last nudged), $\Delta Y$ is the change in $Y$ applied by the nudging scheme and $G$ is the relaxation parameter. $G$ is a measure of the strength of the relaxation towards $Y_{imposed}$ at each timestep and can also be expressed as $G = \frac{1}{\tau}$ where $\tau$ is known as the relaxation timescale. When choosing the relaxation timescale, a balance is required between constraining the model sufficiently to the imposed state (I.E. a short enough $\tau$ such that the model's $Y$ avoids evolving freely) and avoiding the introduction of large gradients (a large enough $\tau$ to avoid model instability). The MetOffice Unified model, of which the model configurations presented here are a part, typically uses a relaxation timescale of 6 hours at all vertical levels. This has been shown to produce good quality nudging results in a range of studies employing such a method despite the different radiative timescales present across atmospheric levels (Brown et al. 2020). In our experiments we to nudge the zonal wind, $U$, towards an idealised version of the QBO wind fields expressed as 
 
 \begin{equation} \label{eq:imposed_U}
 U_{qbo}(t, z) = F(z) sin(\frac{2\pi (t + zs)}{period}),
@@ -42,7 +42,7 @@ where the parameters are set to $\alpha = 3.5, \beta = 0.27, \gamma = 3.2335, R_
 
 \section{Results}
 \subsection{QBO Characteristics}
-We first analyse the equatorial winds in each experiment and verify if the implementation of nudging has resulted in realistic ZMZW profiles. Figure \ref{experiment_QBO_samples} shows the equatorial winds that results from implementing QBO nudging between the xxhPa and xxhPa levels. These winds reflect the key features of the idealised winds (figure \ref{fig:Idealised_QBO_samples}a and c) - the deep experiment exhibits vertical coherence in the middle stratosphere while the shallow simulation shows opposite phases of the QBO in the upper and lower stratosphere. This indicates that our selection of nudging timescale, $\tau$ = 6 hours, is suitable to fix the state of the QBO in each experiment. 
+We first analyse the equatorial winds in each experiment and verify if the implementation of nudging has resulted in realistic ZMZW profiles. Figure \ref{experiment_QBO_samples} shows the equatorial winds that results from implementing QBO nudging between the xxhPa and xxhPa levels. These winds reflect the key features of the idealised winds (figure \ref{fig:Idealised_QBO_samples}a and c) - the deep experiment exhibits vertical coherence in the middle stratosphere while the shallow simulation shows opposite phases of the QBO in the upper and lower stratosphere. This indicates that our selection of nudging timescale, $\tau$ = 6 hours, is suitable to fix the state of the QBO in each experiment. The period of ZMZW variations in the middle stratosphere (90-xxhPa) is also close to the value specified by the idealised winds ($\sim$32 months). Both experiments also exhibit spectral power corresponding to a period of approximately 6 months which indicate the presence of an SAO variation (see section \ref{sec:equatorial_strat} in the simulations. This SAO variation is also visible in the full wind field (figure \ref{fig:experiment_QBOs}a and c) and the magnitude of winds in the deep experiment appear significantly larger than both the shallow experiment and the  
 
 - notable SAO anomalies
 
@@ -50,17 +50,19 @@ We first analyse the equatorial winds in each experiment and verify if the imple
 
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/Idealised_QBO_features.png}
-\caption[Idealised QBO winds used for nudging experiments]{Sample time-series of idealised equatorial ZMZW and associated momentum forcing profile for the deep (\textbf{a} and \text{b} respectively) and shallow (\textbf{c} and \textbf{d} respectively) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
-\label{fig:Idealised_QBO_samples}
+\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/experiment_QBOs.png}
+\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{c}) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
+\label{fig:experiment_QBOs}
 \end{center}
 \end{figure}
 
-We need to show first that the nudging we have implemented has resulted in realistic winds in the model. We don't want the idealised nudging to have 'messed up' other regions e.g. the SAO. We can use ERA-Interim composites to do this.
-
-Fig1 - Nudged equatorial winds in each experiment as well as possible ERA-Interim or the pi-clim control for UKESM. Demonstrate that the nudging scheme has been effective in fixing the winds over the correct pressure level range. possibly include some height-period Fourier spectra for each QBO. 
-
 Fig2 - a possible composite plot showing how the deep QBO manifests in the remainder of the atmosphere in ERA-Interim compared to that in each experiments. Need some argument showing a) that the deep QBO induces anomalies in the SAO region and b) that the deep QBO experiment show a similar SAO anomaly. 
+
+on inspection, the time-height profile from the deep experiment is 
+
+\subsection{Upper Atmosphere Characteristics}
+
+The equatorial winds shown in figure \ref{fig:experiment_QBOs} indicate that, in addition of variations in winds in the QBO region (between 100hPa and 10hPa), both experiments also exhibit variations in the SAO region (above the 1hPa level). Additionally, previous work suggest a key role for this region in equator-vortex teleconnections (brown et al.) and influence of the QBO state on SAO conditions (ref). As each experiment imposes significantly different QBO states, this mesospheric region may play a key role in accounting for differences in QBO teleconnections across the experiments. Figure \ref{experiment_SAOs} shows the climatological seasonal cycle of upper stratospheric and lower mesospheric winds in each experiment - a measure of the strength of each phase of the SAO. 
 
 
 \subsection{QBO teleconnections}
