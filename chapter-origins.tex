@@ -35,7 +35,7 @@ As a result of including additional observations for assimilation after 1998, ER
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=0.5\textwidth]{Figures/Figures-origins/channels.png}
+    \includegraphics[width=0.85\textwidth]{Figures/Figures-origins/channels.png}
     \caption[Channel profiles for satellite retrievals assimilated by ERA-Interim]{Figure from \cite{Fujiwara17} \textbf{Left}: Channel weighting profiles for the TOVS Stratospheric Sounding Unit (SSU) used for ERA-Interim dataset in the period 1979-2005. \textbf{Right}: Weighting profiles from the ATOVS-suite Advanced Microwave Sounding Unit (AMSU) which provides measurements for ERA-Interim from 1998-present. Solid lines represent near Nadir profiles and dashed lines signify limb profiles (taken at an angle of $48.33^{\circ}$).}
     \label{fig:Satellite_channels}
 \centering
@@ -225,7 +225,7 @@ The second major mode of stratospheric variability is the QBO at equatorial lati
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = \linewidth]{Figures/Figures-origins/SSW_series_ERA_UKESM.png}
-\caption[Vortex ZMZW and SSW time series from ERA-Interim]{\textbf{(a, b)}: Dec-Mar annual mean ZMZW anomaly from the climatological mean at 60$^\circ$\,N from a 40 year sample from the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. \textbf{(c, d)}: Time series of SSWs recorded per winter season in the same datasets.}
+\caption[Vortex ZMZW and SSW time series from UKESM pi-control and ERA-Interim]{\textbf{(a, b)}: Dec-Mar annual mean ZMZW anomaly from the climatological mean at 60$^\circ$\,N from a 40 year sample from the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. \textbf{(c, d)}: Time series of SSWs recorded per winter season in the same datasets.}
 \label{fig:SSW_series_sample}
 \end{center}
 \end{figure}
@@ -235,7 +235,7 @@ The second major mode of stratospheric variability is the QBO at equatorial lati
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = 0.8\linewidth]{Figures/Figures-origins/equatorial_U_UKESM_ERA.png}
-\caption[Time-height profiles for equatorial ZMZW in UKESM and ERA-Interim.] {ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from from a 40 year sample of the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. Horizontal lines mark the 15\,hPa and 30\,hPa levels between which the deep QBO metric employed by \cite{andrewsObserved2019} is defined.}
+\caption[Time-height profiles for equatorial ZMZW from UKESM and ERA-Interim.] {ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from from a 40 year sample of the pre-industrial control simulation of UKESM \textbf{(a)} and the ERA-Interim dataset between 1979 and 2018 \textbf{(b)}. Horizontal lines mark the 15\,hPa and 30\,hPa levels between which the deep QBO metric employed by \cite{andrewsObserved2019} is defined.}
 \label{fig:equatorial_U_sample}
 \end{center}
 \end{figure}
@@ -250,7 +250,7 @@ There is evidence of coupling between the two major modes of stratospheric varia
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = 0.85\linewidth]{Figures/Figures-origins/holton_tan_composites.png}
-\caption[ZMZW composite differences between QBO phases in UKESM.]{Dec-Mar ZMZW composite differences between QBO East and QBO West phases evaluated in Sep-Oct at individual levels as well as using the deep QBO metric. The phase of the QBO is defined any Sep-Nov equatorial ($5^{\circ}$\ S--$5^{\circ}\ $N average) ZMZW that exceeds a magnitude of 5\ m\,s$^{-1}$. Coloured shading indicates differences significant above the 95\% confidence level under a 2 tail student’s t-test.}
+\caption[ZMZW composite differences between QBO phases in UKESM pi-control.]{Dec-Mar ZMZW composite differences between QBO East and QBO West phases evaluated in Sep-Oct at individual levels as well as using the deep QBO metric. The phase of the QBO is defined any Sep-Nov equatorial ($5^{\circ}$\ S--$5^{\circ}\ $N average) ZMZW that exceeds a magnitude of 5\ m\,s$^{-1}$. Coloured shading indicates differences significant above the 95\% confidence level under a 2 tail student’s t-test.}
 \label{fig:holton_tan_comp}
 \end{center}
 \end{figure}
@@ -278,7 +278,7 @@ There is also evidence of in-season coupling between the vortex and phases of EN
 \
 
 
-section{Regression Analysis}
+\section{Regression Analysis}
 We next employ a multi-linear regression analysis to measure the relative contributions to the time-series of SSWs per year (as in figure \ref{fig:SSW_series_sample}) from the QBO, ENSO and the Aleutian low. The results from this analysis are summarised in table 1.  Sensitivity experiments were performed to identify the optimum averaging intervals (lags) for each index: the deep 15-30 hPa QBO index and Ni\~{n}o3.4 indices were both defined using early winter (Sep-Nov) averages while the AL index was defined using Dec-Mar averages. The coefficients are all significant to the 95\% level but are relatively small and the $R^2$ score is only 0.047 indicating these variables account for only a small portion of the variability in the SSW timeseries. While results from this multi-linear regression analysis are easy to interpret, the approach does not directly tackle the problem posed in this study, that of multi-decadal variability in SSWs and its origins, for two main reasons. Firstly, regression analysis assumes stationarity i.e. it provides a measure of stationary contributions to variability and will only highlight signals that are relatively persistent for the whole simulation. Secondly, it  analyses variability in the time series at all timescales simultaneously, so that the results are dominated by the timescales with larger amplitude variations.  This means that the results in table 1 are most likely dominated by the shorter (inter-annual) timescales and any small amplitude variations at longer timescales will not be revealed. The latter can be addressed to some extent by smoothing or filtering the time-series, as discussed in the next section, but this requires prior knowledge of which frequencies are of interest. Furthermore, co-variability in predictor indices of a regression model may lead to spurious coefficients. This may be an issue here as \cite{raoModulation2019} note correlations between ENSO and the AL. The variance inflation factor is a measure of the degree to which each regression coefficient is altered by predictor co-variations. the VIF for each predictor is greater than 1 indicating a moderate degree of co-variation with other predictors \citep{akinwandeVariance2015} which may further hamper the efficacy of this regression method. An alternative and superior approach to this problem employs wavelet analysis, described more fully in the next section, which successively examines different frequency intervals to identify the presence of signals thus avoiding dominance by one particular frequency, and also measures the time evolution of the signal so that non-stationary signals can also be identified. 
 
 \begin{table}[h!]
@@ -308,7 +308,7 @@ A more comprehensive assessment of the long-term variability of SSWs can be made
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = 0.8\linewidth]{Figures/Figures-origins/SSW_wavelet.png}
-\caption{\textbf{Top left}: SSW events per Dec-Mar season in UKESM \textbf{Bottom left}: Wavelet power spectrum of time series in top left. Hatching represents area outside the cone of influence in which edge effects are significant and power should not be considered. Yellow contours represent the 95\% confidence level assuming mean background AR1 red noise. \textbf{Top Right}: Morlet wavelet used for the wavelet transform in the time domain. \textbf{Bottom right:} Global power spectrum, the wavelet power averaged over the whole simulation (blue line), and global 95\% confidence spectrum (red dashed line).}
+\caption[Wavelet power spectrum for SSW time series in UKESM pi-control]{\textbf{Top left}: SSW events per Dec-Mar season in UKESM \textbf{Bottom left}: Wavelet power spectrum of time series in top left. Hatching represents area outside the cone of influence in which edge effects are significant and power should not be considered. Yellow contours represent the 95\% confidence level assuming mean background AR1 red noise. \textbf{Top Right}: Morlet wavelet used for the wavelet transform in the time domain. \textbf{Bottom right:} Global power spectrum, the wavelet power averaged over the whole simulation (blue line), and global 95\% confidence spectrum (red dashed line).}
 \label{fig:SSW_series_wavelet}
 \end{center}
 \end{figure}
@@ -320,7 +320,7 @@ The focus of this study is on the longer-term time variations to understand the 
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = 0.8\linewidth]{Figures/Figures-origins/SSW_wavelet_5_yr_wavelet.png}
-\caption{\textbf{Top left}: SSW events per Dec-Mar season in UKESM smoothed using a 5 year running mean. \textbf{Bottom left}: Wavelet power spectrum of time series in top left. Hatching represents area outside the cone of influence in which edge effects are significant and power should not be considered. Navy contours represent 95\% confidence level assuming mean background AR1 red noise. \textbf{Top Right}: Morlet wavelet used for the wavelet transform in the time domain. \textbf{Bottom right:} Global power spectrum, the wavelet power averaged over the whole simulation, and global 95\% confidence spectrum.}
+\caption[Wavelet power spectrum for Dec-Mar 5 year mean SSW time series in UKESM pi-control]{\textbf{Top left}: SSW events per Dec-Mar season in UKESM smoothed using a 5 year running mean. \textbf{Bottom left}: Wavelet power spectrum of time series in top left. Hatching represents area outside the cone of influence in which edge effects are significant and power should not be considered. Navy contours represent 95\% confidence level assuming mean background AR1 red noise. \textbf{Top Right}: Morlet wavelet used for the wavelet transform in the time domain. \textbf{Bottom right:} Global power spectrum, the wavelet power averaged over the whole simulation, and global 95\% confidence spectrum.}
 \label{fig:SSW_series_5yr_wavelet}
 \end{center}
 \end{figure}
@@ -332,7 +332,7 @@ The wavelet power spectrum of $SSW_{5yr}$ (figure \ref{fig:SSW_series_5yr_wavele
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = 0.8\linewidth]{Figures/Figures-origins/SSW_wavelet_5_yr_NDJFM.png}
-\caption{Like figure \ref{fig:SSW_series_5yr_wavelet} for the Nov-Mar SSWs per NH winter season timeseries smoothed with a 5 year rolling window.}
+\caption[Wavelet power spectrum of Nov-Mar 5 year mean SSW time series in UKESM pi-control]{Like figure \ref{fig:SSW_series_5yr_wavelet} for the Nov-Mar SSWs per NH winter season timeseries smoothed with a 5 year rolling window.}
 \label{fig:SSW_series_5yr_NDJFM_wavelet}
 \end{center}
 \end{figure}
@@ -348,14 +348,14 @@ The most obvious potential driver of such long timescale variability is the ocea
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = \linewidth]{Figures/Figures-origins/ENSO_wavelet_combined.png}
-\caption{\textbf{(a, top)}: Ni\~{n}o3.4 time series, \textbf{a, bottom left}: Wavelet power spectrum (shaded contours represent wavelet power and yellow contours the 95\% significance level compared to an AR1 process), \textbf{a, bottom right}: global wavelet power spectrum (blue) and 95\% confidence level (dashed red). \textbf{b}: Cross spectra between $SSW_5yr$ and the Ni\~{n}o3.4 index. \textbf{b, top}: Ni\~{n}o3.4 and $SSW_5yr$ time series. \textbf{b, bottom}: Cross power spectrum. Shading indicates cross power, yellow contours the 95\% confidence interval and arrows the relative phase angle between signals in the time series (to the right: in phase, vertically upwards: $\frac{\pi}{2}$ out of phase with SSWs leading, to the left: $\pi$ out of phase, vertically downwards: $\frac{\pi}{2}$ out of phase Ni\~{n}o3.4 leading). Green contours on both spectra represent the 95\% confidence intervals for the wavelet power spectrum of $SSW_{5yr}$.}
+\caption[Wavelet power spectrum for Sep-Nov Ni\~{n}o3.4 index and cross power spectrum with SSW$_{5yr}$]{\textbf{(a, top)}: Ni\~{n}o3.4 time series, \textbf{a, bottom left}: Wavelet power spectrum (shaded contours represent wavelet power and navy contours the 95\% significance level compared to an AR1 process), \textbf{a, bottom right}: global wavelet power spectrum (blue) and 95\% confidence level (dashed red). \textbf{b}: Cross spectra between $SSW_5yr$ and the Ni\~{n}o3.4 index. \textbf{b, top}: Ni\~{n}o3.4 and $SSW_5yr$ time series. \textbf{b, bottom}: Cross power spectrum. Shading indicates cross power, navy contours the 95\% confidence interval and arrows the relative phase angle between signals in the time series (to the right: in phase, vertically upwards: $\frac{\pi}{2}$ out of phase with SSWs leading, to the left: $\pi$ out of phase, vertically downwards: $\frac{\pi}{2}$ out of phase Ni\~{n}o3.4 leading). Black, dashed contours on both spectra represent the 95\% confidence intervals for the wavelet power spectrum of $SSW_{5yr}$.}
 \label{fig:ENSO_wavelet}
 \end{center}
 \end{figure}
 
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = 0.8\linewidth]{Figures/Figures-origins/ENSO_wavelet_unsmoothed.png}
+\noindent\includegraphics[width = \linewidth]{Figures/Figures-origins/ENSO_wavelet_unsmoothed.png}
 \caption{Like figure \ref{fig:SSW_series_wavelet} for the Sep-Nov  Ni\~{n}o3.4 index} 
 \label{fig:ENSO_unsmoothed_wavelet}
 \end{center}
@@ -386,7 +386,7 @@ The strength of the Aleutian Low (AL) has also been used as an indicator of trop
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width = \linewidth]{Figures/Figures-origins/PDO_wavelet_combined.png}
-\caption{As figure 8 for the Sep-Nov PDO index smoothed with a 5 year window. \textbf{a}: PDO time series and associated wavelet power spectrum. \textbf{b}: Cross power spectrum between PDO and $SSW_{5yr}$.}
+\caption[Wavelet power spectrum for 5 year mean PDO index from UKESM]{As figure 8 for the Sep-Nov PDO index smoothed with a 5 year window. \textbf{a}: PDO time series and associated wavelet power spectrum. \textbf{b}: Cross power spectrum between PDO and $SSW_{5yr}$.}
 \label{fig:PDO_wavelet}
 \end{center}
 \end{figure}
@@ -394,7 +394,7 @@ The strength of the Aleutian Low (AL) has also been used as an indicator of trop
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width = \linewidth]{Figures/Figures-origins/SSWs_vs_AL_wavelet_unsmoothed.png}
-\caption{\textbf{Top}: December–March Aleutian Low index (red) and SSWs per NH winter (blue) time series. \textbf{Bottom} Cross-wavelet power spectrum between the two time series.}
+\caption[Wavelet cross power spectrum between AL index and SSW timeseries]{\textbf{Top}: December–March Aleutian Low index (red) and SSWs per NH winter (blue) time series. \textbf{Bottom} Cross-wavelet power spectrum between the two time series.}
 \label{fig:AL_unsmoothed_wavelet}
 \end{center}
 \end{figure}
@@ -406,7 +406,7 @@ Despite some coincident signals between tropical SSTs, AL and $SSW_{5yr}$, long-
 
 \begin{center}
 \begin{figure}[h!]
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-origins/QBO_levels.png}
+\noindent\includegraphics[width = 1.2\linewidth]{Figures/Figures-origins/QBO_levels.png}
 \caption[QBO timeseries and associated wavelet power spectra at different levels in UKESM]{\textbf{(a-f)}: Sep-Nov mean ZMZW averaged between 5$^\circ$S--5$^\circ$N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure \ref{fig:SSW_series_5yr_wavelet} and navy contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
 \label{fig:QBO_levs}
 \end{figure}
@@ -418,13 +418,13 @@ While the wavelet analysis technique is able to isolate and reveal frequency mod
 
 %---------------------------------------------------------------
 
-\begin{center}
 \begin{figure}[h!]
-\includegraphics[width = \linewidth]{Figures/Figures-origins/QBO_levels_amp.png}
-\caption[QBO amplitude timeseries and associated wavelet power spectra at different levels in UKESM]{\textbf{(a-e)}: Hilbert amplitude of Sep-Nov mean ZMZW averaged between 5$^\circ$\,S--5$^\circ$\,N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure \ref{fig:SSW_series_5yr_wavelet} and navy contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
-\label{fig:QBO_levs_amp}
+    \begin{center}
+    \includegraphics[width = 1.2\linewidth]{Figures/Figures-origins/QBO_levels_amp.png}
+    \caption[QBO amplitude timeseries and associated wavelet power spectra at different levels in UKESM]{\textbf{(a-e)}: Hilbert amplitude of Sep-Nov mean ZMZW averaged between 5$^\circ$\,S--5$^\circ$\,N latitude on different pressure levels (a-e) and the deep metric averaged between 15--30\,hPa (f). \textbf{(g-l)}: Wavelet power spectra for each time series shown in (a-c). Shading represents wavelet power with a colour scale the same as that seen in figure \ref{fig:SSW_series_5yr_wavelet} and navy contours indicate regions of significant power (>95\% confidence interval) compared to a background AR1 process.}
+    \label{fig:QBO_levs_amp}
+    \end{center}
 \end{figure}
-\end{center}
 
 %---------------------------------------------------------------
 
@@ -490,7 +490,7 @@ To further clarify the role of the QBO, we note that an examination of figure 10
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width = 0.8\linewidth]{Figures/Figures-background/cross_power_SSWs_lowrate_vs_QBO_amplitude_modulation_5yr_mean.png}
-\caption{\textbf{Top}: $SSW_{5yr}$ time series with variability in high SSW rate intervals removed by setting all rates above the climatological mean (0.54 events per season) to the mean (blue) and Sep-Nov deep QBO Hilbert Amplitude index smoothed with a 5 year window (red). \textbf{Bottom}: Cross wavelet power spectrum between the two time series.}
+\caption[cross power spectrum between deep QBO amplitude and SSW$_{5yr}$ with variations in high SSW rates removed]{\textbf{Top}: $SSW_{5yr}$ time series with variability in high SSW rate intervals removed by setting all rates above the climatological mean (0.54 events per season) to the mean (blue) and Sep-Nov deep QBO Hilbert Amplitude index smoothed with a 5 year window (red). \textbf{Bottom}: Cross wavelet power spectrum between the two time series.}
 \label{fig:SSW_low_rate_QBO}
 \end{center}
 \end{figure}
