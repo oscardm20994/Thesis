@@ -18,7 +18,7 @@ Despite the significant body of work presented above into the QBO and its relati
 
 To explicitly test the effect of QBO vertical coherence on teleconnections we utilise a set of custom designed simulations which utilises a modified version of the UKESM GCM analysed in chapters 3 and 4. As with the pi-control simulation examined so far, the model component for the atmosphere is GA7.1, GHG concentrations are set to 1850 levels (see section \ref{sec:model_config}) and volcanic eruptions are absent (however a constant background volcanic aerosol level is imposed). The primary difference between the pi-control and the configuration utilised here is the experiments run with no coupled Ocean component. Instead, SSTs are prescribed using a seasonally invariant climatological field obtained from an interval of the the pi-control (year numbers 96-126). Sea Ice extents are also prescribed to climatological values using the same interval of the pi-control and full documentation for this type of timeslice experiment is provided in \cite{oconnorAssessment2021}. All simulations are initialised using conditions from the start of the 30 year interval of the pi-control used to calculate SST and SI climatologies (year number 96). We choose to impose SST and sea ice conditions in our experiments as this removes contributions to atmospheric circulation from interannual to decadal surface modes of variability such as ENSO and the AL. This in turn isolates the effect of the QBO further as any differences in QBO-vortex and QBO-surface interactions across the simulations are not due to coupling with SSTs and other surface boundary conditions.  %Analysis chapters 4 and 5 showed that this year does not lie in an interval in which the QBO or the vortex exhibits significant multi-decadal oscillations. As a result, the initial conditions for the simulation are less likely samples the QBO and vortex in a randomly chosen state.
 
-\section*{Nudging}
+\subsection{Nudging}
 In order to impose the vertical structure of the QBO in our sensitivity experiments we employ a method to constrain atmospheric conditions in a GCM simulation known as nudging. In this method, an atmospheric quantity, $Y$, is constrained via Newtonian-relaxation which pushes the model state for $Y$ towards some imposed value at each model timestep such that
 
 \begin{equation} \label{eq:nudging}
@@ -48,9 +48,8 @@ where the parameters are set to $\alpha = 3.5, \beta = 0.27, \gamma = 3.2335, R_
 \end{figure}
 
 
-\section{Results}
-\subsection{QBO Characteristics}
-We first analyse the equatorial winds in each experiment and verify if the implementation of nudging has resulted in realistic ZMZW profiles. Figure \ref{experiment_QBO_samples} shows the equatorial winds that results from implementing QBO nudging between the xxhPa and xxhPa levels. These winds reflect the key features of the idealised winds (figure \ref{fig:Idealised_QBO_samples}a and c) - the deep experiment exhibits vertical coherence in the middle stratosphere while the shallow simulation shows opposite phases of the QBO in the upper and lower stratosphere. This indicates that our selection of nudging timescale, $\tau$ = 6 hours, is suitable to fix the state of the QBO in each experiment. The period of ZMZW variations in the middle stratosphere (90-xxhPa) is also close to the value specified by the idealised winds ($\sim$32 months). 
+\section{QBO Characteristics}
+We first analyse the equatorial winds in each experiment and verify whether the implementation of nudging has resulted in the desired equatorial ZMZW profiles. Figure \ref{fig:experiment_QBOs}a and c show a 5 year sample of the the equatorial winds in each experiment that results from implementing QBO nudging between the 90hPa and 5hPa levels. These winds reflect many of the key features of the idealised winds (figure \ref{fig:Idealised_QBO_samples}a and c) - the deep experiment exhibits vertical coherence in the middle stratosphere while the shallow simulation shows opposite phases of the QBO in the upper and lower stratosphere. The period of ZMZW variations in both experiments is indicated by the Fourier power spectra shown in figures \ref{fig:experiment_QBOs}b and d. The mid-stratospheric winds (90-$\sim$ 10hPa) exhibits peak Fourier power corresponding to a period close to the value specified by the idealised winds (32 months) in both experiments. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -60,61 +59,39 @@ We first analyse the equatorial winds in each experiment and verify if the imple
 \end{center}
 \end{figure}
 
+While the simulations' QBO reflects some of the main characteristics of the target nudging winds, there is a notable asymmetry in the amplitudes of the two QBO phases in both experiments with the westerly phase amplitude appearing larger in all QBO cycles throughout each simulation. This is an unexpected result - We defined the target nudging field using equation \ref{eq:imposed_U} which ensures each phase of the idealised QBO exhibits identical magnitude (i.e. $F(z)$ in equation \ref{eq:imposed_U} is constant in time). To examine this asymmetry further, we analyse the timeseries of simulated and idealised winds on individual pressure levels to identify potential biases (Figures \ref{fig:winds_on_levs_deep} and \ref{fig:winds_on_levs_shallow}). In the deep experiment (figure \ref{fig:winds_on_levs_deep}) the easterly phase of the QBO is in good agreement with the idealised winds on each of the pressure levels sampled. In contrast, the magnitude of the westerly phase resulting from the simulation is systematically over-represented compared to the nudging winds. This effect is apparent throughout much of the mid-stratosphere (10hPa-50hPa) and suggests the possibility of a westerly momentum forcing term in the model which acts to override the influence of the nudging scheme. This in turn may suggest that our selection of nudging timescale, $\tau$ = 6 hours, is too long in relation to other forcing terms which act on shorter timescales. The effect is less pronounced in the shallow experiment with only the QBO at 50hPa exhibiting notable over-representation in westerly amplitude. The source of additional forcing term is unclear but is likely closely associated with kelvin wave forcing as this is the primary source of the westerly QBO phase (see section \ref{sec:equatorial_strat}). While this bias does lead to marginal asymmetries in QBO phases, the desired vertical structures is obtained in both experiments which is the focus of this study and therefore we proceed with the simulations for analysis of QBO teleconnections in the next section. The possible detrimental effect of this amplitude bias is that NH winters in which we study teleconnections may preferentially occur under one QBO phase more than the other. As a result, in all future analysis of these simulations we note the number of NH winters exhibiting each QBO phase and only draw major conclusions in cases where their abundance is comparable. The result from figures \ref{fig:winds_on_levs_deep} and \ref{fig:winds_on_levs_shallow} may also indicate the suitability of a shorter nudging timescale for future nudged QBO experiments using this model setup than that recommended by the MetOffice Unified Model documentation (xxxx) but further simulations are required to confirm this.
+
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/experiment_QBOs.png}
-\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{20 year sample of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{c}) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
-\label{fig:experiment_QBOs}
+\noindent\includegraphics[width = 0.95\linewidth]{Figures/Figures-deepQBO/winds_on_lev_nudging_deep.png}
+\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{5 year sample of ZMZW on individual pressure levels averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep QBO experiments (blue) and the Idealised wind field used for nudging in the same experiment (orange).}
+\label{fig:winds_on_levs_deep}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\noindent\includegraphics[width = 0.95\linewidth]{Figures/Figures-deepQBO/winds_on_lev_nudging_shallow.png}
+\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{Like figure \ref{fig:winds_on_levs_deep} for the shallow QBO experiment.}
+\label{fig:winds_on_levs_shallow}
 \end{center}
 \end{figure}
 
 
+\section{Upper Atmosphere Characteristics}
 
-
-
-
-Both experiments also exhibit spectral power in equatorial winds  corresponding to a period of approximately 6 months at pressure levels above 10hPa which indicate the presence of an SAO variation (see section \ref{sec:equatorial_strat}) in the simulations. This SAO variation is also visible in the full wind field (figure \ref{fig:experiment_QBOs}a and c) and the magnitude of winds in the deep experiment appear significantly larger than the shallow experiment. This difference is explored in closer detail in the following section. Climatological differences in ZMZW are also apparent across the experiments. Figure \ref{fig:climatologies_experim} shows latitude height profiles for winter months (Dec-Feb). The largest discrepacies across the simulations are situated near the 10hPa level where the deep experiment exhibits greater westerly amplitude winds
-
-- differences at the nudging boundary over the equator
-
-- large climatological differences in SAO region, likely due to filtered waves
-
-- vortex climatology differences - deep QBO exhibits stronger vortex. 
+In addition to the imposed QBO states, both experiments also exhibit variations in ZMZW on the 1hPa level and above corresponding to a period of $\sim$ 6 months which indicates the presence of an SAO like variation in each simulation (see figure \ref{fig:experiment_QBOs}). Previous work suggests a key role for this region in equator-vortex teleconnections (e.g. brown et al. xxxx) therefore features of SAO in both experiments may play a key role in dictating responses from the vortex, troposphere and surface. There are notable differences in the SAO winds across the two experiments apparent from the wind fields above 10hPa in figures \ref{fig:experiment_QBOs}a and d: The deep experiment exhibits stronger easterly SAO phases than in the shallow experiment and the westerly phase is significantly more prominent in the shallow experiment. These differences can be formally diagnosed through analysis of climatological wind profiles from each experiment. latitude-height climatologies for NH winter (Dec-Feb)
 
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/experiment_QBOs.png}
-\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{20 year sample of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{c}) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
-\label{fig:experiment_QBOs}
+\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/SLP_composites_QBO_phases_d_higher_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
+\caption[Climatological seasonal cycle of equatorial ZMZW in QBO experiments]{Climatological seasonal cycle of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{b}) QBO experiments. Panel \textbf{c} shows climatological differences between deep and shallow seasonal cycles. Black dots on (c) denote differences significant to the 95\% level under a 2-tailed student's t-test.}
+\label{fig:experiment_SAOs}
 \end{center}
 \end{figure}
 
 
-on inspection, the time-height profile from the deep experiment is irregular. 
-
-there are a set of discontinuities occuring at the 10hPa level where the nudging boundary is situated.
-
-\begin{figure}[h!]
-\begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/DJF_climatologies.png}
-\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{20 year sample of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{c}) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
-\label{fig:climatologies_experiments}
-\end{center}
-\end{figure}
-
-
-\begin{figure}[h!]
-\begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/deep_composites_ERA_deepexp.png}
-\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{20 year sample of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{c}) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
-\label{fig:experiment_QBOs}
-\end{center}
-\end{figure}
-
-
-\subsection{Upper Atmosphere Characteristics}
-
-The equatorial winds shown in figure \ref{fig:experiment_QBOs} indicate that, in addition of variations in winds in the QBO region (between 100hPa and 10hPa), both experiments also exhibit variations in the SAO region (above the 1hPa level). Additionally, previous work suggest a key role for this region in equator-vortex teleconnections (brown et al.) and influence of the QBO state on SAO conditions (ref). As each experiment imposes significantly different QBO states, this mesospheric region may play a key role in accounting for differences in QBO teleconnections across the experiments. Figure \ref{fig:experiment_SAOs} shows the climatological seasonal cycle of upper stratospheric and lower mesospheric winds in each experiment - a measure of the strength of each phase of the SAO. 
+ and influence of the QBO state on SAO conditions (ref). As each experiment imposes significantly different QBO states, this mesospheric region may play a key role in accounting for differences in QBO teleconnections across the experiments. Figure \ref{fig:experiment_SAOs} shows the climatological seasonal cycle of upper stratospheric and lower mesospheric winds in each experiment - a measure of the strength of each phase of the SAO. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -124,9 +101,7 @@ The equatorial winds shown in figure \ref{fig:experiment_QBOs} indicate that, in
 \end{center}
 \end{figure}
 
-
 \subsection{QBO teleconnections}
-
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/ZMZW_composites_QBO_phases_U_s_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
@@ -143,8 +118,6 @@ The equatorial winds shown in figure \ref{fig:experiment_QBOs} indicate that, in
 \end{center}
 \end{figure}
 
-
-
 \begin{figure}[h!]
 \begin{center}
 \noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/SLP_composites_QBO_phases_s_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
@@ -154,12 +127,17 @@ The equatorial winds shown in figure \ref{fig:experiment_QBOs} indicate that, in
 \end{figure}
 
 
-\begin{figure}[h!]
-\begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/SLP_composites_QBO_phases_d_higher_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
-\caption[Climatological seasonal cycle of equatorial ZMZW in QBO experiments]{Climatological seasonal cycle of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{b}) QBO experiments. Panel \textbf{c} shows climatological differences between deep and shallow seasonal cycles. Black dots on (c) denote differences significant to the 95\% level under a 2-tailed student's t-test.}
-\label{fig:experiment_SAOs}
-\end{center}
-\end{figure}
+
+
+%\begin{figure}[h!]
+%\begin{center}
+%\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/DJF_climatologies.png}
+%\caption[Equatorial ZMZW time-height profiles from QBO nudging experiments]{20 year sample of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{c}) QBO experiments. Horizontal dashed lines on (a) and (c) denote the xxhPa and 90hPa pressure levels between which we implement nudging towards the idealised wind in each experiment.}
+%\label{fig:climatologies_experiments}
+%\end{center}
+%\end{figure}
+
+%Climatological differences in ZMZW are also apparent across the experiments. Figure \ref{fig:climatologies_experim} shows latitude height profiles for winter months (Dec-Feb). The largest discrepancies across the simulations are situated near the 10hPa level where the deep experiment exhibits greater westerly amplitude winds
+
 
 
