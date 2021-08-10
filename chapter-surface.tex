@@ -241,24 +241,29 @@ The AMOC response magnitude is also sensitive to varying the percentile threshol
 We also test the sensitivity of our key result outlined in section \ref{sec:AMOC_obs_contribution}, that the magnitude of NAM$_{10}$ extremes is directly proportional to the AMOC anomaly 17 years later, to parameter choices. Figure \ref{cors_stats_parameters_strong} shows the correlation between strong NAM$_{10}$ extremes and the lagged AMOC anomaly at 50N (black vertical lines) for a range of threshold percentile values used to define persistent vortex intervals (increasing in panels left to right) and smoothing widths ($\sigma$, increasing top to bottom). Each correlation's significance level is compared to a PDF of surrogate correlations constructed using the same procedure as described for figure \ref{cors_stat_sigs}. For values of $\sigma$ between 2 and 7 years, the real correlation lies on the edge of the surrogate correlation PDF for all values of threshold percentile. This suggests the relationship between positive extremes in the smoothed NAM$_{10}$ and the resulting AMOC response is robust to the definition of strong persistent vortex interval for these values of smoothing width. for $\sigma$ = 1 year, the correlation lies well within the distribution surrogate PDF for all sampled values of threshold percentile suggesting the vortex-AMOC interaction is significantly weakened for these parameter combinations. This weakening is accounted for by the fact that with a filtering kernel with $\sigma$ = 1 year, contributions from only approximately 3 years either side of the interval centre (with the majority of contributions from 1-2 years either side) are included in smoothed NAM$_{10}$ values. This may not be sufficient to provide atmospheric forcing persistent enough to induce significant correlations between NAM$_{10}$ extremes and AMOC anomalies. For $\sigma$ values larger than 7 years, the correlations are also deemed not significant against the bootstrapping test for the sampled values of percentile thresholds. This is because at such large values of $\sigma$, each index is smoothed over time intervals as larger or larger than the lags considered in this analysis (17 years). As a result, variations in the NAM$_{10}$ and AMOC on timescales up to and beyond 17 years are removed thus also removing significant correlations.
 
 \newpage
-
+\begin{landscape}
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width =0.5\linewidth]{Figures/Figures-surface/cors_sigs_thresh_and_sigma.png} 
+\noindent\includegraphics[width =0.9\linewidth]{Figures/Figures-surface/cors_sigs_thresh_and_sigma.png} 
 \caption{like figure \ref{cors_stat_sigs}a for different combinations of smoothing width ($\sigma$) (increasing in panels top to bottom) and percentile used to define NAM$_{10}$ extremes (decreasing left to right). The title of each sub-figure indicates the pair of parameter values used.}%, blue bars indicate the PDF of surrogate correlations and black vertical lines indicate the real correlation between strong NAM$_{10}$ extremes and 17 year lagged AMOC anomalies.}
 \label{cors_stats_parameters_strong}
 \end{center}
 \end{figure}
+\end{landscape}
+
 
 We finally carry out a similar analysis on correlations between weak NAM$_{10}$ extremes and the resulting AMOC anomaly (figure \ref{cors_stats_parameters_weak}). In contrast to figure \ref{cors_stats_parameters_strong} for strong intervals, the majority of correlations for different parameter combinations lie well within the corresponding surrogate PDF. as discussed in section \ref{sec:AMOC_obs_contribution}, this may be due to the different dynamical behaviour associated with weak persistent intervals which is highly dependant on SSW timing within each winter. The results presented from this sensitivity analysis once again suggests a key role for positive (strong) extremes in the in vortex-AMOC interactions which are generally robust to reasonable choices of parameter values (threshold percentile and $\sigma$) while interactions involving anomalously weak vortex intervals appear less pronounced. 
 
+\newpage
+\begin{landscape}
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width =0.5\linewidth]{Figures/Figures-surface/cors_sigs_thresh_and_sigma_weak.png} 
+\noindent\includegraphics[width =0.9\linewidth]{Figures/Figures-surface/cors_sigs_thresh_and_sigma_weak.png} 
 \caption{like figure \ref{cors_stats_parameters_strong} for correlations between NAM$_{10}$ values associated with persistent weak intervals and 17 year lagged AMOC anomalies at 50N.}
 \label{cors_stats_parameters_weak}
 \end{center}
 \end{figure}
+\end{landscape}
 
 %%% Local Variables:
 %%% mode: latex
