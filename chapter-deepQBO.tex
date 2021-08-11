@@ -90,7 +90,7 @@ In addition to the imposed QBO states, both experiments also exhibit variations 
 \end{center}
 \end{figure}
 
-Additional analysis of the climatological seasonal cycle in equatorial winds (figure \ref{fig:experiment_SAOs}) reveals further differences in simulation SAOs: the westerly phase of the SAO appearing in early NH winter (Sep-Nov), which is attributed to the dissipation of Kelvin waves smaller scale inertia-gravity waves \citep{Dunkerton1982, Hitchman1988}, is significantly weaker and exhibits less vertical extent in the deep experiment compared to the shallow. The timing of phase transitions from westerly to easterly in early NH winter (denoted by the climatological zero wind line on approximately the 0.1hPa level) is also marginally later in the shallow experiment. These differences in the extent of the westerly SAO phase could play a key role in equator-vortex interactions in each experiment as these features, particularly phase transition timings, have been shown to associate with the occurrence of SSWs \citep{JGray2001, Hamilton}. The results from figures \ref{fig:climatologies_experiments} and \ref{fig:experiment_SAOs} highlight the potential impact that the degree of vertical coherence in the QBO may have have on the characteristics of the upper atmosphere. The role these SAO variations play in teleconnections with the vortex, the troposphere and surface is explored further in section xxxx.
+Additional analysis of the climatological seasonal cycle in equatorial winds (figure \ref{fig:experiment_SAOs}) reveals further differences in simulation SAOs: the westerly phase of the SAO appearing in early NH winter (Sep-Nov), which is attributed to the dissipation of Kelvin waves smaller scale inertia-gravity waves \citep{Dunkerton1982, Hitchman1988}, is significantly weaker and exhibits less vertical extent in the deep experiment compared to the shallow. The timing of phase transitions from westerly to easterly in early NH winter (denoted by the climatological zero wind line on approximately the 0.1hPa level) is also marginally later in the shallow experiment. These differences in the extent of the westerly SAO phase could play a key role in equator-vortex interactions in each experiment as these features, particularly phase transition timings, have been shown to associate with the occurrence of SSWs \citep{JGray2001, Hamilton}. The results from figures \ref{fig:climatologies_experiments} and \ref{fig:experiment_SAOs} highlight the potential impact that the degree of vertical coherence in the QBO may have have on the characteristics of the upper atmosphere. The role these SAO variations play in teleconnections with the vortex, the troposphere and surface is explored further in section \ref{sec:vortex_responses_QBO}.
 
 \begin{figure}[h!]
 \begin{center}
@@ -101,37 +101,47 @@ Additional analysis of the climatological seasonal cycle in equatorial winds (fi
 \end{figure}
 
 
-\section{QBO teleconnections}
+\section{Vortex Responses to the deep and shallow QBO}
+\label{sec:vortex_responses_QBO}
 So far, we have shown that both experiments exhibit the desired vertical structure in the QBO as well as a potential influence of such structures on SAO variability. The focus of this study however, is the different teleconnections that arise between the equator and other parts of the climate system such as that with the NAO demonstrated in \cite{andrewsObserved2019}. Next, we analyse composites of common diagnostics of climate variability under different QBO conditions in each experiment to compare the nature of teleconnections. 
 
 Figure \ref{fig:HT_deep} shows a measure of the strength of the Holton-Tan effect in the deep experiment -  composites of NH winter (Dec-Mar) ZMZW anomalies under QBO-east (QBOE) and QBO-west (QBOW) conditions defined on various pressure levels. At each pressure level, the anomaly composites for each phase (figure \ref{fig:HT_deep}, left and middle columns) exhibit vertically coherent anomalies between 10hPa and 100hPa. This is consistent with figure \ref{fig:experiment_QBOs}a which shows agreement between all mid-stratosphere levels in QBO phase. In the SAO region (above 10hPa), composites for both QBOE and QBOW phases exhibit large anomalies of the opposite sign of the QBO phase below. This is consistent with the idea of vertically coherent QBO phases filtering out waves with the same phase speed direction as the QBO and permitting wave forcing of the opposite phase speed into the lower mesosphere leading to anomalies of the opposite sign. 
 
 There is also a negative response in the polar vortex to the westerly QBO at all sampled levels (figure \ref{fig:HT_deep}, middle row). This is another unexpected result - the traditional HT effect explored in chapter 3 would predict the westerly phase of the QBO to be associated with a strengthened vortex as planetary waves were permitted to propagate vertically over greater latitudinal range according to the Charney-Drazin criterion thus leading to reduced direct wave driving of the vortex. Instead, this result may indicate an important role for the SAO, which exhibits easterly anomalies for QBOW phases, in the response of the vortex to the QBO. Indeed, the composite difference (QBOE-QBOW) shows a significantly strengthened vortex (over 8 $ms^{-1}$ composite difference) as well as anomalously westerly SAO winds which is consistent with mechanisms proposed in \cite{grayForecasting2020} in which the SAO strength can act to modulate the width of the mid-latitude waveguide and therefore wave driving of the vortex. The role of this region in teleconnections is explored more closely in section \ref{sec:role_of_SAO}.
 
-Additionally, the composite differences show a significant tropospheric response in the subtropical jet region (xx-xx) with the same sign as the difference in the QBO region. This may be evidence for the so called 'subtropical path' hypothesised in \cite{graySurface2018} by which the QBO influences tropospheric and surface variability directly (as opposed to via modulation of the vortex).
-
-ZMZW anomaly composites for the shallow experiment (figure \ref{fig:HT_shallow}) show a markedly different structure of responses to QBO phases. In the middle stratosphere (100hPa-10hPa), anomaly composites to each QBO phase (figure \ref{fig:HT_shallow}, left and middle columns) resembles the pancake structure of alternating easterly / westerly anomalies observed in the pi-control of UKESM (see figure \ref{fig:holton_tan_comp}). This reflects the full wind field as well as the desired vertical structure for this experiment(figures \ref{fig:experiment_QBOs}c and \ref{fig:Idealised_QBO_samples}c) with opposite QBO phases near the 100hPa and 10hPa levels. There is also a less coherent response to QBO phases in the SAO region than in the deep experiment. Significant SAO anomalies are observed in response to QBOE phases between 15 and 30 hPa as well as to the QBOW phase at 70hPa. At other levels, minimal SAO response is observed. The vortex response is also different to that in the deep experiment with composite differences (figure \ref{fig:HT_shallow}, right column) exhibiting a positive vortex response for the QBO between 15hPa and 30hPa and negative response for 70hPa and minimal significant response at 70hPa. The magnitude of vortex responses at all levels are lower than those for the deep experiment (a maximum response of $\sim 6 ms^{-1}$). This reduced magnitude is consistent with studies such as \cite{Gray2018} which showed an enhanced vortex response for vertically integrated QBO metrics however our experiments impose different degrees of vertical coherence as opposed to derive metrics which capture increased coherence. There is also a subtropical jet response to QBO phases in the shallow experiment which exhibits a lower magnitude than in the deep experiment.
-
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/ZMZW_composites_QBO_phases_U_d_higher_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
+\noindent\includegraphics[width = 0.7\linewidth]{Figures/Figures-deepQBO/ZMZW_composites_QBO_phases_U_d_higher_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
 \caption[]{Dec-Mar ZMZW anomaly composites for QBO East (left column), QBO West (middle column) phases and composite differences (QBOE - QBOW, right column). The QBO phase is defined as any Dec-Mar equatorial ($5^{\circ}$\ S--$5^{\circ}\ $N average) ZMZW that exceeds a magnitude of 5\ m\,s$^{-1}$ on individual levels (which are indicated in sub-figure titles). Numbers in parentheses indicate the number of winters of each phase that make up the composite. Coloured shading in the right column indicates ZMZW differences significant above the 95\% confidence level under a 2 tail student’s t-test.}
 \label{fig:HT_deep}
 \end{center}
 \end{figure}
 
+ZMZW anomaly composites for the shallow experiment (figure \ref{fig:HT_shallow}) show a markedly different structure of responses to QBO phases. In the middle stratosphere (100hPa-10hPa), anomaly composites to each QBO phase (figure \ref{fig:HT_shallow}, left and middle columns) resembles the pancake structure of alternating easterly / westerly anomalies observed in the pi-control of UKESM (see figure \ref{fig:holton_tan_comp}). This reflects the full wind field as well as the desired vertical structure for this experiment(figures \ref{fig:experiment_QBOs}c and \ref{fig:Idealised_QBO_samples}c) with opposite QBO phases near the 100hPa and 10hPa levels. There is also a less coherent response to QBO phases in the SAO region than in the deep experiment. Significant SAO anomalies are observed in response to QBOE phases between 15 and 30 hPa as well as to the QBOW phase at 70hPa. At other levels, minimal SAO response is observed. The vortex response is also different to that in the deep experiment with composite differences (figure \ref{fig:HT_shallow}, right column) exhibiting a positive vortex response for the QBO between 15hPa and 30hPa and negative response for 70hPa and minimal significant response at 70hPa. The magnitude of vortex responses at all levels are lower than those for the deep experiment (a maximum response of $\sim 6 ms^{-1}$). This reduced magnitude is consistent with studies such as \cite{Gray2018} which showed an enhanced vortex response for vertically integrated QBO metrics.
 
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/ZMZW_composites_QBO_phases_U_s_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
+\noindent\includegraphics[width = 0.7\linewidth]{Figures/Figures-deepQBO/ZMZW_composites_QBO_phases_U_s_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
 \caption[Climatological seasonal cycle of equatorial ZMZW in QBO experiments]{Like figure \ref{fig:HT_deep} for the shallow experiment}
 \label{fig:HT_shallow}
 \end{center}
 \end{figure}
 
+Despite a clearer signal in the vortex from the deep experiment, the sign of the response is unexpected and of the opposite sign to the unforced simulation (the pi-clim control, figure xxx). To examine the possible causes of this response, we next split the ZMZW composite differences presented in figures  
+
+
+
+
+\section{Tropospheric and Surface responses to the QBO}
+
+Additionally, the composite differences show a significant tropospheric response in the subtropical jet region (xx-xx) with the same sign as the difference in the QBO region. This may be evidence for the so called 'subtropical path' hypothesised in \cite{graySurface2018} by which the QBO influences tropospheric and surface variability directly (as opposed to via modulation of the vortex).
+
+There is also a subtropical jet response to QBO phases in the shallow experiment which exhibits a lower magnitude than in the deep experiment.
+
+
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/SLP_composites_QBO_phases_d_higher_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
+\noindent\includegraphics[width = 0.7\linewidth]{Figures/Figures-deepQBO/SLP_composites_QBO_phases_d_higher_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
 \caption[Climatological seasonal cycle of equatorial ZMZW in QBO experiments]{Climatological seasonal cycle of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{b}) QBO experiments. Panel \textbf{c} shows climatological differences between deep and shallow seasonal cycles. Black dots on (c) denote differences significant to the 95\% level under a 2-tailed student's t-test.}
 \label{fig:experiment_SAOs}
 \end{center}
@@ -140,17 +150,16 @@ ZMZW anomaly composites for the shallow experiment (figure \ref{fig:HT_shallow})
 
 \begin{figure}[h!]
 \begin{center}
-\noindent\includegraphics[width = \linewidth]{Figures/Figures-deepQBO/SLP_composites_QBO_phases_s_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
+\noindent\includegraphics[width = 0.7\linewidth]{Figures/Figures-deepQBO/SLP_composites_QBO_phases_s_DJFMQBO_vs_DJFM_70hPa_5thresh.png}
 \caption[Climatological seasonal cycle of equatorial ZMZW in QBO experiments]{Climatological seasonal cycle of ZMZW averaged between 5$^{\circ}$\,S--5$^{\circ}$\,N latitude from the deep (\textbf{a}) and shallow (\textbf{b}) QBO experiments. Panel \textbf{c} shows climatological differences between deep and shallow seasonal cycles. Black dots on (c) denote differences significant to the 95\% level under a 2-tailed student's t-test.}
 \label{fig:experiment_SAOs}
 \end{center}
 \end{figure}
-\newpage
 
 
-\section{The Role of the SAO in Teleconnections}
-\label{sec:role_of_SAO}
+%\section{The Role of the SAO in Teleconnections}
+%\label{sec:role_of_SAO}
 
-\section{Summary and Discussion}
+%\section{Summary and Discussion}
 
 
