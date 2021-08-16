@@ -1,6 +1,6 @@
 \chapter{Background}
 \label{cha:background}
-The Stratosphere is a layer of the Earth's atmosphere characterised by increasing temperatures with height. This feature distinguishes it from the lowest layer of the atmosphere, the troposphere, and makes it stable to vertical convection. As a result, the stratosphere exhibits significantly different dynamical behaviour to the troposphere. The stratosphere is bounded by the tropopause from below and the stratopause above. The height of these bounds vary latitudinally with tropopause heights ranging from  xxx at the equator to $\sim$ xxx km in the polar regions. While the stratosphere and troposphere are characterised separately, current understanding of atmospheric dynamics incorporates elements of coupling between the layers. This chapter outlines the key points of this understanding including dynamics of the polar and equatorial stratosphere, stratosphere-troposphere coupling as well as surface variability relevant to the stratosphere. It also introduces the time variability dynamics in the stratosphere, a key theme in the work presented in this thesis. 
+The Stratosphere is a layer of the Earth's atmosphere characterised by increasing temperatures with height. This feature distinguishes it from the lowest layer of the atmosphere, the troposphere, and makes it stable to vertical convection. As a result, the stratosphere exhibits significantly different dynamical behaviour to the troposphere. The stratosphere is bounded by the tropopause from below and the stratopause above. The height of these bounds vary latitudinally with tropopause heights ranging from  $\sim 13km$ at the equator to $\sim 6km$ near the polar regions. While the stratosphere and troposphere are characterised separately, current understanding of atmospheric dynamics incorporates elements of coupling between the layers. This chapter outlines the key points of this understanding including dynamics of the polar and equatorial stratosphere, stratosphere-troposphere coupling as well as surface variability relevant to the stratosphere. It also introduces the time variability of dynamical features in the stratosphere, a key theme in the work presented in this thesis. 
 
 \section{The Stratospheric Polar Vortex}
 \label{sec:polar_vortex}
@@ -10,21 +10,21 @@ During Northern Hemisphere (NH) winter, the NH polar stratosphere is plunged int
 \frac{\partial u_g}{\partial z} = -\frac{R}{f H}\frac{\partial T}{\partial y},
 \end{equation}
 
-where $u_g$ is the geostrophic zonal wind velocity (the wind resulting in a balance between Coriolis and pressure gradient forces), $z$ is the height coordinate, $R$ is the specific gas constant and $H$ is the atmospheric scale height, the gain in altitude which leads to a reduction in atmospheric pressure by a factor of $e$ given by $H = RT_r/g$ (g = acceleration d due to gravity and $T_r$ is a reference temperature). $f$ in equation \ref{eq:thermal_wind} is the Coriolis parameter under a beta plane approximation which is given by
+where $u_g$ is the geostrophic zonal wind velocity (the wind resulting in a balance between Coriolis and pressure gradient forces), $z$ is the height coordinate, $R$ is the specific gas constant ($R = 8.31JK^{\text{-} 1}mol^{\text{-} 1}$) and $H$ is the atmospheric scale height, the gain in altitude which leads to a reduction in atmospheric pressure by a factor of $e$ given by $H = RT_r/g$ (g = acceleration due to gravity and $T_r$ is a reference temperature). $f$ in equation \ref{eq:thermal_wind} is the Coriolis parameter under a beta plane approximation which is given by
 
 \begin{equation} \label{eq:beta_plane_approx}
 f = f_0 + \beta y = 2 \Omega sin(\phi_0) + 2 \Omega cos(\phi_0)\frac{ y}{a},
 \end{equation}
 
-where $\phi_0$ is a reference latitude, $\Omega$ is the rotation rate of the earth and $a$ is the Earth's radius. This increase in vertical shear in $u_g$ leads to a strong, stratospheric, westerly flow circumnavigating the North Pole during boreal winter months. This feature is known as the northern hemisphere polar vortex or polar night jet. Henceforth we refer to it as the vortex.
+where $\phi_0$ is a reference latitude, $\Omega$ is the rotation rate of the earth and $a$ is the Earth's radius. This increase in vertical shear in $u_g$ leads to a strong, stratospheric, westerly flow circumnavigating the North Pole during boreal winter months. This feature is known as the northern hemisphere polar vortex or polar night jet. Henceforth we refer to this feature as simply "the vortex".
 
-The vortex contains a core of cold polar air in which temperatures can drop to around 200K in the lower stratosphere according to the European Centre for Medium Range Weather Forecasting (ECMWF) interim reanalysis data set (referred to as ERA-interim). Wintertime averaged zonal wind speeds are found to reach up to approximately $40ms^{-1}$ at the 10hPa level at a latitude of 60N. Figure \ref{fig:ERAclimDJF} shows the climatological zonal mean zonal wind (ZMZW) from ERA-interim for the December-February period. It exhibits the traits set out above with a persistent zonal westerly wind above the 30hPa level. The troposphere exhibits 2 westerly jets which show greatest magnitude winds at approximately xxx hPa. Also included in figure \ref{fig:ERAclimDJF} is the seasonal cycle in daily winds at 60N on the 10hPa level (near the edge of the vortex). On average, the vortex forms in mid xxxx and breaks down to be replaced with summer easterlies in xxx. These winds show a large degree of variability across different seasons (figure \ref{fig:ERAclimDJF} grey lines) with some seasons exhibiting anomalously strong westerly flow and others even exhibiting easterlies for a portion of the season. These effects are due to the action of atmospheric waves on the vortex and are described fully in the following section. 
+The vortex contains a core of cold polar air in which temperatures can drop to around 200K in the lower stratosphere according to the European Centre for Medium Range Weather Forecasting (ECMWF) interim reanalysis data set (referred to as ERA-interim). Wintertime average zonal wind speeds are found to reach up to approximately $40ms^{-1}$ on the 10hPa level at a latitude of 60N. Figure \ref{fig:ERAclimDJF} shows the climatological zonal mean zonal wind (ZMZW) from ERA-interim for the December-February period. It exhibits the traits set out above with a persistent zonal westerly wind above the 30hPa level and northward of . The troposphere exhibits 2 subtropical westerly jets which show greatest magnitude winds at approximately 90hPa. Also included in figure \ref{fig:ERAclimDJF} is the seasonal cycle in daily winds at 60N on the 10hPa level (near the edge of the vortex). On average, the vortex forms in mid xxxx and breaks down to be replaced with summer easterlies in xxx. These winds show a large degree of variability across different seasons (figure \ref{fig:ERAclimDJF} grey lines) with some seasons exhibiting anomalously strong westerly flow and others even exhibiting easterlies for a portion of the season. These effects are due to the action of atmospheric waves on the vortex and are described fully in the following section. 
 
 
 \begin{figure}[h!]
 \centering
     \includegraphics[width= 9cm]{Figures/Figures-background/fig1_for_transfer.png}
-    \caption{DJF climatological zonal mean zonal wind from ERA-interim dataset between 1979 and 2018.}
+    \caption{Dec-Feb climatological zonal mean zonal wind from ERA-interim dataset between 1979 and 2018.}
     \label{fig:ERAclimDJF}
 \centering
 \end{figure}
@@ -33,7 +33,7 @@ The vortex contains a core of cold polar air in which temperatures can drop to a
 \label{sec:atmos_waves}
 Atmospheric wave is the term generally used for deviations from the zonal mean dynamical state and these phenomena, often referred to as Rossby waves, play a key role in the variability of the vortex. These waves are forced in the troposphere by air flowing over variations in topography (orographic waves) or through other mechanisms such as interaction with convection fronts and latent heat release (non-orographic). Perturbations originating near the surface can propagate vertically into the stratosphere altering large scale circulation features via wave drag as they transfer momentum to the background flow. 
 
-Large scale Rossby waves are known as planetary waves and exhibit wavelengths of the order of $1000km$. The propagation of these waves can be described using the Quasi Geostrophic approximation for fluid in hydrostatic balance with low Rossby number, $R_0 = U/f_0 L$, where U and L are characteristic zonal velocity and length scales respectively. Under this framework the Quasi Geostrophic Potential Vorticity (QGPV) equation states that in the absence of friction and diabatic heating, the quasi geostrophic potential vorticity, $q$, is conserved following the geostrophic wind:
+Large scale Rossby waves are known as planetary waves and exhibit wavelengths of the order of $\sim 1000km$. The propagation of these waves can be described using the Quasi Geostrophic approximation for fluid in hydrostatic balance with low ($<0.1$) Rossby number, $R_0 = U/f_0 L$, where U and L are characteristic zonal velocity and length scales respectively. Under this framework the Quasi Geostrophic Potential Vorticity (QGPV) equation states that in the absence of friction and diabatic heating, the quasi geostrophic potential vorticity, $q$, is conserved following the geostrophic wind:
 
 \begin{equation} \label{eq-PV_conserved}
 D_g q = 0
@@ -69,7 +69,7 @@ where $\Gamma$ is the operator
 \Gamma = \nabla^2 \psi + \frac{\partial}{\partial z}\bigg(\frac{f_0^2}{N_B^2}\frac{\partial}{\partial z}\bigg).
 \end{equation}
 
-It can be shown that this equation has wave like solutions whose vertical propagation is only supported under the condition
+It can be shown that this equation has wave like solutions whose vertical propagation is only supported if the following condition is satisfied:
 
 \begin{equation} \label{eq:propagation_critera}
 \overline{u} - c = \frac{\beta k}{k^2 + l^2 + \frac{f_0^2 m^2}{N_B^2}} < \overline{u}_c = \frac{\beta k}{k^2 + l^2}
@@ -85,7 +85,7 @@ This result implies that vertical propagation can only occur through background 
 
 The Charney-Drazin criterion also leads to the definition of a critical layer of the atmosphere as the layer at which the background zonal flow no longer supports propagation of a given wave (i.e. where $\overline{u} \sim \overline{u}_c$). When a wave encounters a critical layer, much of the linear dynamical behaviour proposed in equation \ref{eq:Linearised_QGPV} breaks down as the waves' amplitude grows too large to support continued propagation and it dissipates, transferring momentum to the background flow through so called wave-mean flow interactions. There therefore exists a two way interaction between the background flow and wave disturbances in the atmosphere: the magnitude of $\overline{u}$ relative to $\overline{u}_c$ dictates the propagation of waves through the troposphere into the stratosphere and waves significantly influence the background wind upon dissipation at a critical layer.
 
-Wave-mean flow momentum deposition which is key for understanding stratospheric dynamical variability can be quantified via the introduction of a variable known as the Eliassen-Palm flux. In the QG framework as above, equations for the zonal mean and eddy components of the wind vector ($u, v$) and buoyancy ($b$), the vertical acceleration of air parcels due to density variations, can be expressed as 
+Wave-mean flow momentum deposition, which is key for understanding stratospheric dynamical variability, can be quantified via the introduction of a variable known as the Eliassen-Palm flux. In the QG framework as above, equations for the zonal mean and eddy components (deviations from the zonal mean) of the wind vector ($u, v$) and buoyancy ($b$), the vertical acceleration of air parcels due to density variations, can be expressed as 
 
 \begin{equation} \label{eq:QG_Ubar}
 \frac{\partial \overline{u}}{\partial t} = f\overline{v} - \frac{\partial}{\partial y} \overline{u'v'} + \overline{X}, 
@@ -97,7 +97,7 @@ Wave-mean flow momentum deposition which is key for understanding stratospheric 
 
 where the overbar denotes a zonal mean quantities and deviations from this (eddy quantities) are denoted by primes. $\overline{X}$ and $\overline{Y}$ represent the dissipative forces on the flow (in this case friction and diabatic heating). Buoyancy is used in these equations as a close analogous of temperature. $b = g\frac{T - T_r}{T_r}$ where $T_r$ is a reference temperature normally defined by height. $b$ is related to the concept of reduced gravity which is important when considering vertical fluid motion. 
 
-In order to decouple these equations, we introduce the mean residual circulation, the difference between zonal mean flow and contributions from eddy-mean flow interactions. These are known as the Transformed Eulerian Mean (TEM) meridional and vertical velocities \citep{Andrews1976} (denoted by $^*$) and can be expressed as 
+In order to decouple these equations, we introduce the mean residual circulation, the difference between zonal mean flow and contributions from eddy-mean flow interactions. These are known as the Transformed Eulerian Mean (TEM) meridional and vertical velocities \citep{Andrews (denoted by $^*$) and can be expressed as 
 
 \begin{equation} \label{eq:V*}
 \overline{v^*} = \overline{v} - \frac{1}{\rho_0}\frac{\partial}{\partial z} \bigg(\rho_0 \frac{\overline{v'\theta'}}{\frac{\partial{\overline{\theta}}}{\partial{z}}}\bigg)
