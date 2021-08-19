@@ -140,7 +140,7 @@ X(t) = x(t) + \tilde{x}(t) i = A(t) e^{i\theta},
 where $A(t)$ is the instantaneous amplitude of the signal and $\theta(t)$ is the instantaneous phase angle - a measure of signal progression through a cycle at time $t$.
 
 \subsection{Statistical Methods}
-\label{sec:stat_tests}
+\label{sec:stat_methods}
 
 \subsubsection*{Student's t-test}
 Much of the analysis presented in this chapter, and indeed in the whole thesis, involves comparisons of composite and mean quantities. A two-tailed student's t-test is implemented to test the null hypothesis that two sampled quantities, $x_1$ and $x_2$, with means $\overline{x}_1$ and $\overline{x}_2$ and standard deviations $\sigma_{1}$ and $\sigma_{2}$ are drawn from the same underlying normal distribution. A $t$ statistic is defined by $t = \frac{\overline{x}_1 - \overline{x}_2}{\sigma_{12} \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ where $n_i$ is the number of samples for quantity $i$ and $\sigma_{12}$ is the pooled variance for the two quantities given by $\sigma_{12} = \sqrt{\frac{\sigma^2_2 (n_2-1) + \sigma^2_1(n_1 - 1)}{n_1+n_2-2}}$. Significance on the difference in means can then be estimated by comparing the value of $t$ with a Student's t-distribution to give an associated $p$ value. Differences which give a $p$ value greater than a deemed level (normally 95\%) are deemed significant in which case the null hypothesis of identical means is rejected to this level.
@@ -162,7 +162,7 @@ se(\hat{\beta_j}) = \sqrt{\frac{SSR}{n - k} (X^TX)^{-1}_{jj}}
 
 where SSR is the sum of squared residuals which measures the sum of squared deviations of predicted values from the mean $y$ value, $\overline{y}$. This is given by $SSR = \sum_i^n{(\hat{y}_i - \overline{y})^2}$). $k$ is the number of predictors used in the linear model (in this case 3) and $X$ is an $n \times k$ matrix consisting of the predictor indices. We also define significance levels for $\hat{\beta_j}$ using a one-tailed $t$ statistic (similar to above) with $n-k$ degrees of freedom to test the null hypothesis that $\hat{\beta_j}$ = 0. The $t$ statistic is given by $t = \frac{\hat{\beta_j}}{se(\hat{\beta_j})}$.
 
-\subsubsection{EOF Analysis}
+\subsection*{EOF Analysis}
 \label{sec:eof_analysis}
 We also utilise a method for diagnosing patterns of variability in a quantity defined on a spatial and temporal grid. Such a method, known as Empirical Orthogonal Function (EOF) analysis decomposes a function, $y$, into a set of basis functions which indicate the spatial patterns that maximises variance in $y$. 
 
