@@ -162,7 +162,7 @@ se(\hat{\beta_j}) = \sqrt{\frac{SSR}{n - k} (X^TX)^{-1}_{jj}}
 
 where SSR is the sum of squared residuals which measures the sum of squared deviations of predicted values from the mean $y$ value, $\overline{y}$. This is given by $SSR = \sum_i^n{(\hat{y}_i - \overline{y})^2}$). $k$ is the number of predictors used in the linear model (in this case 3) and $X$ is an $n \times k$ matrix consisting of the predictor indices. We also define significance levels for $\hat{\beta_j}$ using a one-tailed $t$ statistic (similar to above) with $n-k$ degrees of freedom to test the null hypothesis that $\hat{\beta_j}$ = 0. The $t$ statistic is given by $t = \frac{\hat{\beta_j}}{se(\hat{\beta_j})}$.
 
-\subsection*{EOF Analysis}
+\subsubsection*{EOF Analysis}
 \label{sec:eof_analysis}
 We also utilise a method for diagnosing patterns of variability in a quantity defined on a spatial and temporal grid. Such a method, known as Empirical Orthogonal Function (EOF) analysis decomposes a function, $y$, into a set of basis functions which indicate the spatial patterns that maximises variance in $y$. 
 
