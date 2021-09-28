@@ -10,7 +10,7 @@ During Northern Hemisphere (NH) winter, the NH polar stratosphere is plunged int
 \frac{\partial u_g}{\partial z} = -\frac{R}{f H}\frac{\partial T}{\partial y},
 \end{equation}
 
-where $u_g$ is the geostrophic zonal wind velocity (the wind resulting in a balance between Coriolis and pressure gradient forces), $z$ is the height coordinate, $R$ is the specific gas constant ($R = 8.31JK^{\text{-} 1}mol^{\text{-} 1}$) and $H$ is the atmospheric scale height, the gain in altitude which leads to a reduction in atmospheric pressure by a factor of $e$ given by $H = RT_r/g$ (g = acceleration due to gravity and $T_r$ is a reference temperature). $f$ in equation \ref{eq:thermal_wind} is the Coriolis parameter under a beta plane approximation which is given by
+\noindent where $u_g$ is the geostrophic zonal wind velocity (the wind resulting in a balance between Coriolis and pressure gradient forces), $z$ is the height coordinate, $R$ is the specific gas constant ($R = 8.31JK^{\text{-} 1}mol^{\text{-} 1}$) and $H$ is the atmospheric scale height, the gain in altitude which leads to a reduction in atmospheric pressure by a factor of $e$ given by $H = RT_r/g$ (g = acceleration due to gravity and $T_r$ is a reference temperature). $f$ in equation \ref{eq:thermal_wind} is the Coriolis parameter under a beta plane approximation which is given by
 
 \begin{equation} \label{eq:beta_plane_approx}
 f = f_0 + \beta y = 2 \Omega sin(\phi_0) + 2 \Omega cos(\phi_0)\frac{ y}{a},
@@ -18,12 +18,12 @@ f = f_0 + \beta y = 2 \Omega sin(\phi_0) + 2 \Omega cos(\phi_0)\frac{ y}{a},
 
 \noindent where $\phi_0$ is a reference latitude, $\Omega$ is the rotation rate of the earth and $a$ is the Earth's radius. This increase in vertical shear in $u_g$ leads to a strong, stratospheric, westerly flow circumnavigating the North Pole during boreal winter months. This feature is known as the NH polar vortex or polar night jet. Henceforth we refer to this feature as simply "the vortex".
 
-The vortex contains a core of cold polar air in which temperatures can drop to around 200K in the lower stratosphere according to the European Centre for Medium Range Weather Forecasting (ECMWF) interim reanalysis data set (referred to as ERA-interim, \cite{Uppala2005}). Wintertime zonal wind speeds are found to reach up to approximately $70ms^{-1}$ on the 10hPa level at a latitude of 60N. Figure \ref{fig:ERAclimDJF}a shows the climatological zonal mean (averaged over all longitudes) zonal wind (ZMZW) from ERA-interim for the December-February period. It exhibits the traits set out above with a persistent zonal westerly wind above the 30hPa level and northward of $\sim$20$^\circ$N. The troposphere exhibits two subtropical westerly jets which show lower peak magnitude winds of around 30$ms^{-1}$ on approximately 90hPa level. Also included is figure \ref{fig:ERAclimDJF}b showing the seasonal cycle in daily winds at 60N on the 10hPa level (near the edge of the vortex). On average, the vortex forms in early September and breaks down to be replaced with summer easterlies in mid-April. These winds show a large degree of variability across different seasons (figure \ref{fig:ERAclimDJF}b faint blue lines) with some seasons exhibiting anomalously strong westerly flow and others even exhibiting easterlies for a portion of the season. These effects are due to the action of atmospheric waves on the vortex and are described fully in the following section. 
+The vortex contains a core of cold polar air in which temperatures can drop to around 200K in the lower stratosphere according to the European Centre for Medium Range Weather Forecasting (ECMWF) interim reanalysis data set (referred to as ERA-interim, \cite{Uppala2005}). Wintertime zonal wind speeds are found to reach up to approximately $70ms^{-1}$ on the 10hPa level at a latitude of 60$\degree$N. Figure \ref{fig:ERAclimDJF}a shows the climatological zonal mean (averaged over all longitudes) zonal wind (ZMZW) from ERA-interim for the December-February period. It exhibits the traits set out above with a persistent zonal westerly wind above the 30hPa level and northward of $\sim$20$^\circ$N. The troposphere exhibits two subtropical westerly jets which show lower peak magnitude winds of around 30$ms^{-1}$ on approximately 90hPa level. Also included is figure \ref{fig:ERAclimDJF}b showing the seasonal cycle in daily winds at 60$\degree$N on the 10hPa level (near the edge of the vortex). On average, the vortex forms in early September and breaks down to be replaced with summer easterlies in mid-April. These winds show a large degree of variability across different seasons (figure \ref{fig:ERAclimDJF}b faint blue lines) with some seasons exhibiting anomalously strong westerly flow and others even exhibiting easterlies for a portion of the season. These effects are due to the action of atmospheric waves on the vortex and are described fully in the following section. 
 
 \begin{figure}[h!]
 \centering
     \includegraphics[width= \linewidth]{Figures/Figures-background/ZMZW_clim_cycle_ERA.png}
-    \caption[climatological ZMZW and seasonal cycle vortex ZMZW from ERA-Interim]{\textbf{a}: Dec-Feb climatological zonal mean zonal wind from ERA-interim dataset between 1979 and 2018. \textbf{b}: Seasonal cycle in ZMZW, the zonal wind averaged over all longitudes, at 60N on the 10hPa level from the same dataset. The thick blue line indicates the seasonal cycle and faint blue lines signify winds from individual years.}
+    \caption[climatological ZMZW and seasonal cycle vortex ZMZW from ERA-Interim]{\textbf{a}: Dec-Feb climatological zonal mean zonal wind from ERA-interim dataset between 1979 and 2018. \textbf{b}: Seasonal cycle in ZMZW, the zonal wind averaged over all longitudes, at 60$\degree$N on the 10hPa level from the same dataset. The thick blue line indicates the seasonal cycle and faint blue lines signify winds from individual years.}
     \label{fig:ERAclimDJF}
 \centering
 \end{figure}
@@ -47,7 +47,7 @@ D_g = \frac{\partial}{\partial t} + u_g \frac{\partial}{\partial x} + v_g\frac{\
 \noindent and $q$ can be written in terms of the stream function, $\psi$, in the QGPV framework as
 
 \begin{equation} \label{eq:QGPV}
-q = f_0 + \beta y + \nabla^2 \psi + \frac{\partial}{\partial z}\bigg(\frac{f_0^2}{N_B^2} \frac{\partial \psi}{\partial z}\bigg)
+q = f_0 + \beta y + \nabla^2 \psi + \frac{\partial}{\partial z}\bigg(\frac{f_0^2}{N_B^2} \frac{\partial \psi}{\partial z}\bigg),
 \end{equation}
 
 \noindent where $N_B$ is the Brunt–Väisälä frequency, the frequency of vertical motion of a parcel of air in a stable atmosphere. $\psi$ is related to $u_g$ and $v_g$, the zonal and meridional components of geostrophic wind by $u_g = -\frac{\partial \psi}{\partial y}$ and $v_g = -\frac{\partial \psi}{\partial x}$. Under a further approximation of small disturbances from a uniform zonal flow, $\overline{u}$, $\psi$ is given by
@@ -68,7 +68,7 @@ q = f_0 + \beta y + \nabla^2 \psi + \frac{\partial}{\partial z}\bigg(\frac{f_0^2
 \Gamma = \nabla^2 \psi + \frac{\partial}{\partial z}\bigg(\frac{f_0^2}{N_B^2}\frac{\partial}{\partial z}\bigg).
 \end{equation}
 
-It can be shown that this equation has wave like solutions whose vertical propagation is only supported if the following condition is satisfied:
+\noindent It can be shown that this equation has wave like solutions whose vertical propagation is only supported if the following condition is satisfied:
 
 \begin{equation} \label{eq:propagation_critera}
 \overline{u} - c = \frac{\beta k}{k^2 + l^2 + \frac{f_0^2 m^2}{N_B^2}} < \overline{u}_c = \frac{\beta k}{k^2 + l^2}
@@ -77,10 +77,10 @@ It can be shown that this equation has wave like solutions whose vertical propag
 \noindent where $\overline{u}_c$ is a critical velocity corresponding to the background flow when $m = 0$, $c$ is the phase speed and $k, l$ and $m$ are the meridional, zonal and vertical wavenumbers of the wave respectively. Also imposing $m^2 > 0$ (positive vertical wavenumber), which in turn implies that $\overline{u} - c > 0$, gives the Charney-Drazin criterion for the vertical propagation of planetary waves,
 
 \begin{equation} \label{eq:Charney-Drazin}
-0 < \overline{u} - c < \overline{u}_c.
+0 < \overline{u} - c < \overline{u}_c,
 \end{equation}
 
-Which reduces to $0 < \overline{u} < \overline{u}_c$ for waves with 0 phase speed relative to the ground. This result implies that vertical propagation can only occur through background westerly zonal flow with a magnitude less than some critical value, $\overline{u}_c$, which depends on the horizontal wavenumbers of the wave. More specifically, equation \ref{eq:propagation_critera} shows that smaller wave-numbers (larger wavelengths) favours greater propagation. As a result, the spectrum of waves propagating vertically from the troposphere to the stratosphere is dominated by disturbances of wavenumbers 1-3 (referred to as wave-n disturbances). The condition that $\overline{u} - c > 0$, which is necessary for the equality in equation \ref{eq:propagation_critera} to hold, also dictates that westerly phase speed waves ($c > 0$) cannot propagate into the stratosphere under this framework. 
+\noindent which reduces to $0 < \overline{u} < \overline{u}_c$ for waves with 0 phase speed relative to the ground. This result implies that vertical propagation can only occur through background westerly zonal flow with a magnitude less than some critical value, $\overline{u}_c$, which depends on the horizontal wavenumbers of the wave. More specifically, equation \ref{eq:propagation_critera} shows that smaller wave-numbers (larger wavelengths) favours greater propagation. As a result, the spectrum of waves propagating vertically from the troposphere to the stratosphere is dominated by disturbances of wavenumbers 1-3 (referred to as wave-n disturbances). The condition that $\overline{u} - c > 0$, which is necessary for the equality in equation \ref{eq:propagation_critera} to hold, also dictates that westerly phase speed waves ($c > 0$) cannot propagate into the stratosphere under this framework. 
 
 The Charney-Drazin criterion also leads to the definition of a critical layer of the atmosphere as the layer at which the background zonal flow no longer supports propagation of a given wave (i.e. where $\overline{u} \sim \overline{u}_c$). When a wave encounters a critical layer, much of the linear dynamical behaviour proposed in equation \ref{eq:Linearised_QGPV} breaks down as the waves' amplitude grows too large to support continued propagation and it dissipates, transferring momentum to the background flow through so called wave-mean flow interactions. These interactions are often assocaited with large scale responses. For example, 
 the repeated transfer of easterly momentum from the planetary-scale Rossby waves to the background stratospheric flow in the NH requires a temperature adjustment via the thermal wind relation (equation \ref{eq:thermal_wind}). This is acheived via a large-scale meridional circulation with descent at high latitudes which forms the major parts of the Brewer-Dobson circulation (BDC) \citep{butchartBrewerDobson2014}. There therefore exists a two way interaction between the background flow and wave disturbances in the atmosphere: the magnitude of $\overline{u}$ relative to $\overline{u}_c$ dictates the propagation of waves through the troposphere into the stratosphere and waves significantly influence the background wind upon dissipation at a critical layer.
@@ -106,19 +106,19 @@ In order to decouple these equations, we introduce the mean residual circulation
 \overline{w^*} = \overline{w} + \frac{\partial}{\partial y} \bigg( \frac{\overline{v'b'}}{\frac{\partial{\overline{\theta}}}{\partial{z}}}\bigg).
 \end{equation}
 
-Under these transformations the decoupled equations can be written as
+\noindent Under these transformations the decoupled equations can be written as
 
 \begin{equation} \label{eq:decoupled_U}
 \frac{\partial \overline{u}}{\partial t} - f_0 \overline{v*} = \frac{1}{\rho_0} (\nabla \cdot F) + \overline{X}
 \end{equation}
 
-and
+\noindent and
 
 \begin{equation} \label{eq:decoupled_b}
 \frac{\partial \overline{b}}{\partial t} + N^2 \overline{w*} = \overline{Q},
 \end{equation}
 
-where
+\noindent where
 
 \begin{equation} \label{eq:EP_flux}
 F = -\rho_0 \overline{u'v'}\textbf{j} + f\rho_0\frac{\overline{v'\theta'}}{\frac{\partial{\overline{\theta}}}{\partial{z}}} \textbf{k}
