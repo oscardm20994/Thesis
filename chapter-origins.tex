@@ -53,7 +53,7 @@ In order to study possible multi-decadal variability in SSW occurrence, we utili
 W_n(s) = \sum^{N - 1}_{n' = 0} x_{n'} \psi^* \bigg[(n' - n) \frac{\delta t}{s}\bigg],
 \end{equation}
 
-where $*$ denotes the complex conjugate and $s$ is the wavelet scale indicating the frequency of the wavelet. Varying $s$ and translating along the time scale (the index $n$), $W_n$ indicates the amplitude of signals at different scales and their variation in time. \cite{Torrence1998} suggest an approach to varying the scale s as increasing in powers of 2 according to 
+\noindent where $*$ denotes the complex conjugate and $s$ is the wavelet scale indicating the frequency of the wavelet. Varying $s$ and translating along the time scale (the index $n$), $W_n$ indicates the amplitude of signals at different scales and their variation in time. \cite{Torrence1998} suggest an approach to varying the scale s as increasing in powers of 2 according to 
 
 \begin{equation} \label{S}
 s_j = s_0 2^{j \delta j},\\ j = 0, 1, ..., J
@@ -63,13 +63,13 @@ s_j = s_0 2^{j \delta j},\\ j = 0, 1, ..., J
 J = \delta j^{-1} log_2\bigg(\frac{N \delta t}{s_0}\bigg),
 \end{equation}
 
-where $s_0$ is the shortest resolvable scale of a signal, J corresponds to the longest and $\delta j$ is the scale resolution. The translated and scaled wavelet has the form
+\noindent where $s_0$ is the shortest resolvable scale of a signal, J corresponds to the longest and $\delta j$ is the scale resolution. The translated and scaled wavelet has the form
 
 \begin{equation} \label{wavelet}
 \psi^* \bigg[(n' - n) \frac{\delta t}{s}\bigg] = \bigg(\frac{\delta t}{s}\bigg)^{1/2} \psi_0\bigg[(n' - n) \frac{\delta t}{s}\bigg]
 \end{equation}
 
-and we select the form of $\psi_0$ following the recommendation of \cite{Torrence1998} as a Morlet wavelet, an oscillatory function enveloped by a Gaussian which is expressed as
+\noindent and we select the form of $\psi_0$ following the recommendation of \cite{Torrence1998} as a Morlet wavelet, an oscillatory function enveloped by a Gaussian which is expressed as
 
 \begin{equation} \label{psi0}
 \psi_0(p) = \pi^{-1/4} e^{i\omega_0 p} e^{\frac{p^2}{2}}.
@@ -83,7 +83,7 @@ It is computationally quicker to compute the wavelet transform in discrete Fouri
 W_n(s) = \sum^{N - 1}_{k = 0} \hat{x}_{k} \hat{\psi}^* (s\omega_k) e^{i \omega_k n \delta t},
 \end{equation}
 
-where $\hat{x}_{k}$ and $\hat{\psi}$ are the discrete Fourier transforms of the time series $x$ (equation \ref{fourier1}) and the wavelet function (equation \ref{fourier2}) respectively. These quantities are given by 
+\noindent where $\hat{x}_{k}$ and $\hat{\psi}$ are the discrete Fourier transforms of the time series $x$ (equation \ref{fourier1}) and the wavelet function (equation \ref{fourier2}) respectively. These quantities are given by 
 
 \begin{equation} \label{fourier1}
 \hat{x}_k = \frac{1}{N} \sum^{N-1}_{n = 0} x_n e^{\frac{-2\pi i k n}{N}}
@@ -93,13 +93,13 @@ where $\hat{x}_{k}$ and $\hat{\psi}$ are the discrete Fourier transforms of the 
 \hat{\psi}(s\omega_k) = \bigg(\frac{2 \pi s}{\delta t}\bigg) \pi^{-1/4}H(\omega_k) e^{-(s\omega_k - \omega_0)^2/2}
 \end{equation}
 
-where $H(\omega_k)$ is the Heavyside function and $\hat{\psi}$ is normalised to have unit energy when integrated over all $\omega$. The square modulus of the wavelet transform gives the wavelet power spectrum which indicates relative strength of signals in the time series as a function of signal period and discretised time. In order to directly compare spectra of different indices we normalise all timeseries by subtracting the mean and dividing by its standard deviation before performing the wavelet transform. In order to effectively compare spectral power across a range of frequencies we additionally scale the power spectrum by dividing by the scale parameter ($s_j$ defined above) associated with each frequency. This is done following the methodology of \cite{liuRectification2007} which shows that un-scaled spectra exhibit a bias towards overestimated powers at longer periods and that an effective comparison across timescales is possible with such scaling. We also define a confidence interval for wavelet power observed at a given period and time for a series by assuming a mean background spectrum corresponding to that of a first order autoregressive (AR1, red noise) process modelled by
+\noindent where $H(\omega_k)$ is the Heavyside function and $\hat{\psi}$ is normalised to have unit energy when integrated over all $\omega$. The square modulus of the wavelet transform gives the wavelet power spectrum which indicates relative strength of signals in the time series as a function of signal period and discretised time. In order to directly compare spectra of different indices we normalise all timeseries by subtracting the mean and dividing by its standard deviation before performing the wavelet transform. In order to effectively compare spectral power across a range of frequencies we additionally scale the power spectrum by dividing by the scale parameter ($s_j$ defined above) associated with each frequency. This is done following the methodology of \cite{liuRectification2007} which shows that un-scaled spectra exhibit a bias towards overestimated powers at longer periods and that an effective comparison across timescales is possible with such scaling. We also define a confidence interval for wavelet power observed at a given period and time for a series by assuming a mean background spectrum corresponding to that of a first order autoregressive (AR1, red noise) process modelled by
 
 \begin{equation} \label{rednoise}
 x_n = \alpha x_{n - 1} + z_n,
 \end{equation}
 
-where $\alpha$ is the lag-1 autocorrelation of the time series and $z_n$ is Gaussian white noise. \cite{Torrence1998} show that such a process's wavelet power spectrum is $\chi^2$ distributed and therefore can be used to define a 95\% confidence interval for any observed power. 
+\noindent where $\alpha$ is the lag-1 autocorrelation of the time series and $z_n$ is Gaussian white noise. \cite{Torrence1998} show that such a process's wavelet power spectrum is $\chi^2$ distributed and therefore can be used to define a 95\% confidence interval for any observed power. 
 
 \subsection{Cross Wavelet Spectra}
 The cross wavelet spectrum of two time series $x$ and $y$ with associated wavelet spectra $W^x_n$ and $W^y_n$ gives a measure of coincident power (the same period at the same timepoints) between the series. It is given by
@@ -108,7 +108,7 @@ The cross wavelet spectrum of two time series $x$ and $y$ with associated wavele
 \vert W^{xy}_n(s)\vert = \vert W^{x*}_n(s) W^{y}_n(s)\vert,
 \end{equation}
 
-where $W^{x*}_n(s)$ is the complex conjugate of the wavelet power spectrum of $x$ \citep{grinstedApplication2004b}. The complex argument of $W^{xy}_n(s)$ gives the local phase difference between signals in $x$ and $y$ in frequency-time space. The phase relationship between the two time-series can be represented by a
+\noindent where $W^{x*}_n(s)$ is the complex conjugate of the wavelet power spectrum of $x$ \citep{grinstedApplication2004b}. The complex argument of $W^{xy}_n(s)$ gives the local phase difference between signals in $x$ and $y$ in frequency-time space. The phase relationship between the two time-series can be represented by a
 vector that subtends an angle representing the phase difference: On all plots of cross spectra, arrows to the right (left) denoted signals which are in-phase and correlated (anti-correlated). Vertical arrows indicate a phase relationship of $\frac{\pi}{2}$ between the time-series, so that the evolution of
 one is correlated with the rate-of-change of the other. As for individual power spectra, we define a confidence interval for which cross power of a larger amplitude is deemed significant (>95\% confidence interval) by comparing power exhibited by actual series with a theoretical red noise process. The cross power of two such AR1 processes is theoretically distributed such that the probability of obtaining cross power greater than a set of red-noise processes is
 
@@ -116,7 +116,7 @@ one is correlated with the rate-of-change of the other. As for individual power 
 D\bigg(\frac{\vert W^{xy}_n(s)\vert}{\sigma_x \sigma_y} < p\bigg) = \frac{Z_\nu(p)}{\nu} \sqrt{P^x_k P^y_k},
 \end{equation}
 
-where $\sigma$ denotes the standard deviation of the time series, Z is the confidence interval defined by $p$ ($Z$ = 3.999 for 95\% confidence), $\nu$ is the degrees of freedom for a real wavelet spectrum ($\nu$ = 2) and $P^x_k$ is the theoretical Fourier spectrum of the AR1 process. For a given wavenumber k, this can be expressed as
+\noindent where $\sigma$ denotes the standard deviation of the time series, Z is the confidence interval defined by $p$ ($Z$ = 3.999 for 95\% confidence), $\nu$ is the degrees of freedom for a real wavelet spectrum ($\nu$ = 2) and $P^x_k$ is the theoretical Fourier spectrum of the AR1 process. For a given wavenumber k, this can be expressed as
 
 \begin{equation} \label{theoretical_fourier}
 P_k = \frac{1 - \alpha^2}{\vert 1 - \alpha e^{2i\pi k} \vert^2}.
@@ -129,7 +129,7 @@ We utilise a signal processing method known as a Hilbert transform to calculate 
 \tilde{x} = Hil[x(t)] = \frac{1}{\pi t} * x(t),
 \end{equation}
 
-where $\tilde{}$ denotes the transformed series, * signifies a convolution and $t$ is discretised time. Conversely, the original time series can be recovered using an inverse transform expressed as
+\noindent where $\tilde{}$ denotes the transformed series, * signifies a convolution and $t$ is discretised time. Conversely, the original time series can be recovered using an inverse transform expressed as
 
 \begin{equation} \label{eq:hilbert2}
 {x(t)} = Hil^{-1}[\tilde{x}(t)] = -\frac{1}{\pi t} * \tilde{x}(t).
@@ -141,7 +141,7 @@ A complex signal which consists of $x(t)$ and its transform is known as the anal
 X(t) = x(t) + \tilde{x}(t) i = A(t) e^{i\theta},
 \end{equation}
 
-where $A(t)$ is the instantaneous amplitude of the signal and $\theta(t)$ is the instantaneous phase angle - a measure of signal progression through a cycle at time $t$.
+\noindent where $A(t)$ is the instantaneous amplitude of the signal and $\theta(t)$ is the instantaneous phase angle - a measure of signal progression through a cycle at time $t$.
 
 \subsection{Statistical Methods}
 \label{sec:stat_methods}
@@ -153,18 +153,18 @@ Much of the analysis presented in this chapter, and indeed in the whole thesis, 
 We employ a multi-linear regression technique to give an estimate of the relative contributions to SSW variability from the QBO, ENSO and the AL following the method outlined in \cite{Krzywinski}. We model an SSW timeseries of length $n$ which we denote $y$ as 
 
 \begin{equation} \label{regression}
-\hat{y} = \beta_0 + \beta_{1}QBO + \beta_{2}ENSO + \beta_{3}AL
+\hat{y} = \beta_0 + \beta_{1}QBO + \beta_{2}ENSO + \beta_{3}AL,
 \end{equation}
 
-where $\beta_j$ denotes the coefficient of the corresponding index and $\hat{y}$ is the prediction of $y$. We calculate the best estimate for each $\beta$ using an ordinary least square (OLS) estimator which minimises the sum of squared error (SSE) between the predicted $\hat{y}$ and the real time series $y$ with respect to each coefficient. the SSE is given by $SSE = \sum_i^n{(\hat{y}_i - y_i)^2}$ \citep{kimStatistical2018}.
+\noindent where $\beta_j$ denotes the coefficient of the corresponding index and $\hat{y}$ is the prediction of $y$. We calculate the best estimate for each $\beta$ using an ordinary least square (OLS) estimator which minimises the sum of squared error (SSE) between the predicted $\hat{y}$ and the real time series $y$ with respect to each coefficient. the SSE is given by $SSE = \sum_i^n{(\hat{y}_i - y_i)^2}$ \citep{kimStatistical2018}.
 
 We can compare the estimated magnitude of the coefficient for each index to analyse the respective contributions to SSW variability. We can also calculate standard error ranges for $\beta$ estimates. The standard error on an estimated value of a true $\beta_j$ (denoted by $\hat{\beta_j}$) is given by 
 
 \begin{equation} \label{regression_se}
-se(\hat{\beta_j}) = \sqrt{\frac{SSR}{n - k} (X^TX)^{-1}_{jj}}
+se(\hat{\beta_j}) = \sqrt{\frac{SSR}{n - k} (X^TX)^{-1}_{jj}},
 \end{equation}
 
-where SSR is the sum of squared residuals which measures the sum of squared deviations of predicted values from the mean $y$ value, $\overline{y}$. This is given by $SSR = \sum_i^n{(\hat{y}_i - \overline{y})^2}$). $k$ is the number of predictors used in the linear model (in this case 3) and $X$ is an $n \times k$ matrix consisting of the predictor indices. We also define significance levels for $\hat{\beta_j}$ using a one-tailed $t$ statistic (similar to above) with $n-k$ degrees of freedom to test the null hypothesis that $\hat{\beta_j}$ = 0. The $t$ statistic is given by $t = \frac{\hat{\beta_j}}{se(\hat{\beta_j})}$. We also define the coefficient of determination, $R^2$, of the model which gives the proportion of the variance in the dependant variable (in this case the SSW time series) accounted for by the contributions from the predictor indices (multiplied by their respective coefficients).
+\noindent where SSR is the sum of squared residuals which measures the sum of squared deviations of predicted values from the mean $y$ value, $\overline{y}$. This is given by $SSR = \sum_i^n{(\hat{y}_i - \overline{y})^2}$). $k$ is the number of predictors used in the linear model (in this case 3) and $X$ is an $n \times k$ matrix consisting of the predictor indices. We also define significance levels for $\hat{\beta_j}$ using a one-tailed $t$ statistic (similar to above) with $n-k$ degrees of freedom to test the null hypothesis that $\hat{\beta_j}$ = 0. The $t$ statistic is given by $t = \frac{\hat{\beta_j}}{se(\hat{\beta_j})}$. We also define the coefficient of determination, $R^2$, of the model which gives the proportion of the variance in the dependant variable (in this case the SSW time series) accounted for by the contributions from the predictor indices (multiplied by their respective coefficients).
 
 A potential pitfall of implementing this regression analysis is the possibility of significant covariations between predictor indices. If the variance of a given predictor is increased due to covariability with other independent variables, the standard error on the coefficient's estimate, $se(\hat{\beta_j})$, may be artificially inflated leading to difficulties in deriving meaningful findings from the model. A method for quantifying the severity of this multicolinearity issue for a given regression model is the variance inflation factor (VIF) \citep{akinwandeVariance2015b}. $VIF_j$, indicates the degree to which $se(\hat{\beta_j})$ is increased through the effects of all other predictors. It is given by $VIF_j = \frac{1}{1 - R_j^2}$ where $R_j^2$ is the coefficient of determination of a separate linear regression model with predictor $j$ (the AL, for example) as the dependant variable and all other predictors from the original regression model as the independent variables. For the example of the AL (j = 3), this model is given by
 
@@ -188,26 +188,26 @@ In order to assess model representation of vortex variability, we introduce a st
 P(N(k) = n) = \frac{(\lambda k)^n}{n!} e^{-\lambda k},
 \end{equation}
 
-where $\lambda$ is the intensity of the Poisson process calculated as the mean SSW rate over $k$ winters. For two such processes with intensities $\lambda_1$ and $\lambda_2$ the difference in intensity, $\Delta\lambda$ can be expressed as
+\noindent where $\lambda$ is the intensity of the Poisson process calculated as the mean SSW rate over $k$ winters. For two such processes with intensities $\lambda_1$ and $\lambda_2$ the difference in intensity, $\Delta\lambda$ can be expressed as
 
 \begin{equation} \label{lambda}
 \Delta\lambda = \frac{\lambda_1 - \lambda_2}{\sqrt{\frac{\lambda_1}{k_1} + \frac{\lambda2}{k_2}}},
 \end{equation}
 
-where $k_i$ is the number of instances of process $i$ (number of winters sampled). \cite{Charlton2007} suggest that if a pair of Poisson processes are recorded for more than 30 instances each then $\Delta\lambda$ can be assumed to be normally distributed. \cite{guTesting2008} and \cite{huffmanImproved1984} present an alternative test for the significance of $\Delta\lambda$ in cases where the datasets underlying each process are of different lengths (i.e. for comparing model and reanalysis data). For this analysis, we introduce the test statistic
+\noindent where $k_i$ is the number of instances of process $i$ (number of winters sampled). \cite{Charlton2007} suggest that if a pair of Poisson processes are recorded for more than 30 instances each then $\Delta\lambda$ can be assumed to be normally distributed. \cite{guTesting2008} and \cite{huffmanImproved1984} present an alternative test for the significance of $\Delta\lambda$ in cases where the datasets underlying each process are of different lengths (i.e. for comparing model and reanalysis data). For this analysis, we introduce the test statistic
 
 \begin{equation} \label{deltalambda}
 W(X_1, X_2) = 2 \frac{\sqrt{X_1 + 3/8} - \sqrt{\rho(X_2 - 3/8)}}
 {\sqrt{1 + \rho}},
 \end{equation}
 
-where $\rho$ is the ratio of observation lengths of the datasets and $X_i$ is the number of observations of events (number of SSWs) in dataset $i$. W is distributed with associated an $p$ value, 
+\noindent where $\rho$ is the ratio of observation lengths of the datasets and $X_i$ is the number of observations of events (number of SSWs) in dataset $i$. W is distributed with associated an $p$ value, 
 
 \begin{equation} \label{Pval}
 p = 1-2\psi(W(X_1, X_2)),
 \end{equation}
 
-where $\psi(W)$ is the cumulative distribution function of the normal distribution. This statistic provides a parametric test for significance between different SSW rates and the associated p-value is referred to as $P_{para}$ to distinguish it from other tests. 
+\noindent where $\psi(W)$ is the cumulative distribution function of the normal distribution. This statistic provides a parametric test for significance between different SSW rates and the associated p-value is referred to as $P_{para}$ to distinguish it from other tests. 
 
 Additionally, we utilise a bootstrapping approach to test significance in SSW rate differences. For this method we assume two datasets produce a set of time series of the number of SSWs in each winter. These are denoted as $[X1,X2.....X_k]$ and $[Y1,Y2.....Y_j]$ and the mean SSW rate can be expressed as $\mu_X = \frac{\sum[X_1,X_2.....X_k]}{k}$. A confidence interval for an observed difference in mean SSW rate ($\Delta\mu = \mu_X - \mu_Y$) can be constructed by forming a pooled dataset, $Z = [X_1, X_2,....X_k,Y_1,Y_2,....Y_j]$ and randomly choosing (without replacement) synthetic datasets of the same length as $X$ and $Y$ from $Z$ and subsequently calculating synthetic mean differences. repeated choosing can build up a distribution for mean differences and a confidence interval for the real difference, $\Delta\mu$. We perform a set of 10000 random choices for this statistical test and the associated $p$ value is referred to as $P_{boot}$.
 
@@ -256,7 +256,7 @@ The second major mode of stratospheric variability is the QBO at equatorial lati
 
 %---------------------------------------------------------------
 
-There is evidence of coupling between the two major modes of stratospheric variability in the model, giving rise to a Holton-Tan relationship \citep{ansteyHighlatitude2014b}. Figure \ref{fig:holton_tan_comp} shows height-latitude cross-sections of NH winter zonal wind differences between QBO E-W composites defined at various equatorial levels. The familiar pancake structure of alternating easterly / westerly differences is present at equatorial latitudes, indicative of the QBO phase but there is also a response at high latitudes. In good agreement with observations the largest high latitude response amplitude is seen when  the QBO is defined at 50hPa, with anomalously weaker polar vortex strength in QBO-E than in QBO-W years. Higher levels (15\,hPa and 20\,hPa) show little significant QBO-vortex coupling. For comparison we also show in figure \ref{fig:holton_tan_comp} the composite different response for QBO composites selected on the basis of the average QBO winds over a greater depth of the equatorial atmosphere (15-30 hPa and 20-50 hPa). We note that while this QBO definition will select some of the same years as in the separate single-level composite definitions, it is specifically designed to identify only QBO  phases that have extended vertical coherence, following \citep{graySurface2018b} and \cite{andrewsObserved2019d}, so the resulting composite differences in figure \ref{fig:holton_tan_comp} will not necessarily be an average of the corresponding single-level differences. Interestingly, the 15--30 hPa deep-QBO selects years that exhibit not only a weaker polar vortex in QBO-E but also a weaker sub-tropical tropospheric jet (see 200 hPa, 30--40N). This results in a more coherent response in the mid-latitude troposphere and at the surface, in excellent agreement with the results of \cite{graySurface2018b} and \cite{andrewsObserved2019d}. 
+There is evidence of coupling between the two major modes of stratospheric variability in the model, giving rise to a Holton-Tan relationship \citep{ansteyHighlatitude2014b}. Figure \ref{fig:holton_tan_comp} shows height-latitude cross-sections of NH winter zonal wind differences between QBO E-W composites defined at various equatorial levels. The familiar pancake structure of alternating easterly / westerly differences is present at equatorial latitudes, indicative of the QBO phase but there is also a response at high latitudes. In good agreement with observations the largest high latitude response amplitude is seen when  the QBO is defined at 50hPa, with anomalously weaker polar vortex strength in QBO-E than in QBO-W years. Higher levels (15\,hPa and 20\,hPa) show little significant QBO-vortex coupling. For comparison we also show in figure \ref{fig:holton_tan_comp} the composite different response for QBO composites selected on the basis of the average QBO winds over a greater depth of the equatorial atmosphere (15-30 hPa and 20-50 hPa). We note that while this QBO definition will select some of the same years as in the separate single-level composite definitions, it is specifically designed to identify only QBO  phases that have extended vertical coherence, following \citep{graySurface2018b} and \cite{andrewsObserved2019d}, so the resulting composite differences in figure \ref{fig:holton_tan_comp} will not necessarily be an average of the corresponding single-level differences. Interestingly, the 15--30 hPa deep-QBO selects years that exhibit not only a weaker polar vortex in QBO-E but also a weaker sub-tropical tropospheric jet (see 200 hPa, 30$\degree$-40$\degree$N). This results in a more coherent response in the mid-latitude troposphere and at the surface, in excellent agreement with the results of \cite{graySurface2018b} and \cite{andrewsObserved2019d}. 
 
 %---------------------------------------------------------------
 
