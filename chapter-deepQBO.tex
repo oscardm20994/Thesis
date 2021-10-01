@@ -14,7 +14,7 @@ While many studies highlight statistical associations between QBO and SAO metric
 
 Despite the significant body of work presented above into the QBO and its relation to other parts of the climate system, the role of vertical structure in teleconnections is not fully understood. In this chapter, we utilise a set of nudging experiments to explicitly test the importance of vertical coherence in the equatorial stratosphere's influence over the vortex as well as tropospheric and surface variability. Results form this analysis may aid in establishing the true nature of QBO teleconnections as well as develop understanding of a potentially powerful source of forecast predictive skill (the equatorial stratosphere).
 
-\section{Model Configuration}
+\section{Model configuration}
 
 To explicitly test the effect of QBO vertical coherence on teleconnections, we utilise a set of simulations of a modified version of the UKESM GCM analysed in chapters 3 and 4. As with the pi-control simulation examined so far, the model component for the atmosphere is GA7.1, GHG concentrations are set to 1850 levels (see section \ref{sec:model_config}) and volcanic eruptions are absent (however a constant background volcanic aerosol level is imposed). The primary difference between the pi-control and the configuration utilised here is the experiments run with no coupled Ocean component. Instead, SSTs are prescribed using a seasonally invariant climatological field obtained from an interval of the the pi-control (year numbers 96-126) \cite{oconnorAssessment2021b}. Sea Ice extents are also prescribed to climatological values using the same interval of the pi-control. All simulations are initialised using conditions from the start of the 30 year interval of the pi-control used to calculate SST and sea ice climatologies (year number 96). We choose to impose SST and sea ice conditions in our experiments as this removes contributions to the NAO/AO from interannual to decadal variability at the surface such as ENSO. The absence of volcanic eruptions similarly prevents influence of stratospheric injection of volcanic aerosols on the NAO. Removing these contributions, in turn, isolates the effects of the QBO on surface variability. We utilise three simulations using the above configuration with different forced setups:
 
@@ -73,7 +73,7 @@ In both experiments we apply the relaxation in equation \ref{eq:nudging} towards
 \end{center}
 \end{figure}
 
-\section{QBO Characteristics}
+\section{QBO characteristics}
 We first analyse the equatorial winds in each experiment and verify whether the implementation of nudging has resulted in the desired equatorial ZMZW profiles. Figure \ref{fig:experiment_QBOs}a and c show a 5 year sample of the the equatorial winds in each experiment that results from implementing QBO nudging between the 90hPa and 6hPa levels. These winds reflect many of the key features of the idealised winds (figure \ref{fig:Idealised_QBO_samples}); the deep experiment exhibits vertical coherence in the middle stratosphere while the shallow simulation shows opposite phases of the QBO in the upper and lower stratosphere. The period of ZMZW variations in both experiments is indicated by the Fourier power spectra shown in figures \ref{fig:experiment_QBOs}b and d. The mid-stratospheric winds ($\sim$90-10hPa) exhibits peak Fourier power corresponding to a period close to the value specified by the idealised winds (32 months) in both experiments. The QBO variations produced by the nudging experiments also show good agreement in phase amplitude and period with that of the pi-clim cntrl (figures \ref{fig:experiment_QBOs}e and f). It also broadly resembles the winds in ERA-Interim (figures (\ref{fig:experiment_QBOs}g and h)) although the QBO from this dataset exhibits varying degrees of vertical coherence - a deep QBO phase is observed near month number 50 while a shallow QBO is evident near month number 15. These QBO samples confirm that the implementation of the nudging in our experiment has been effective in imposing different degrees of vertical coherence while retaining the characteristics of the QBOs in the un-nudged run and ERA-Interim.
 
 \begin{figure}[h!]
@@ -105,7 +105,7 @@ While this bias does lead to marginal asymmetries in QBO phases, the desired ver
 \end{figure}
 \newpage
 
-\section{Other Atmospheric Characteristics}
+\section{Other atmospheric characteristics}
 
 In addition to the imposed QBO states, both experiments also exhibit variations in ZMZW on the 1hPa level and above corresponding to a period of $\sim$6 months which indicates the presence of an SAO like variation (see figure \ref{fig:experiment_QBOs}). Previous work suggests a key role for this region in equator-vortex teleconnections (e.g. \cite{grayForecasting2020a}) as well as elements of synchronisation between the QBO and SAO \citep{kuaiNonstationary2009c}. As each experiment imposes significantly different QBO states, features of SAO in the experiments may play a key role in dictating responses from the vortex, troposphere and surface.
 
@@ -283,7 +283,7 @@ This point is further demonstrated by studying the co-variability of the SAO reg
 \end{center}
 \end{figure}
 
-\section{Summary and Discussion}
+\section{Summary and discussion}
 In this chapter, we analysed the role of vertical structure of the QBO in teleconnections with the vortex and surface using a set of relaxation experiments which prescribed different degrees of QBO vertical coherence. While many studies have suggested the importance of QBO metrics which incorporate the vertical structure of the QBO \citep{schenzingerDefining2017, andrewsObserved2019d}, many of them identify statistical associations between QBO metrics and other climate variability but encounter problems proving causality in teleconnections. As a result, the true nature of QBO teleconnections including many of the mechanisms involved are still not fully understood. 
 
 We found that an un-nudged configuration of the model (the pi-clim cntrl) was able to simulate some elements of connection between the QBO and the surface however the MSLP response patterns did not closely resemble that of the NAO or AO and were significantly less coherent and persistent than those reported in previous modelling and observational studies (namely \cite{andrewsObserved2019d}). A simulation which prescribed a QBO with perpetual vertical coherence (the deep QBO experiment) exhibited significantly larger anomalies in MSLP than both the un-nudged simulation and one that prescribed a shallow QBO (with different QBO phases near the 100hPa and 10hPa levels respectively). These large anomalies in the deep experiment corresponded to an NAO pattern in late NH concentrated over the southern node in the Azores region. Surprisingly, QBOE phases were associated with a positive NAO pattern, an opposite response to that found in studies using a deep QBO metric \citep{andrewsObserved2019d} as well as that expected from a pathway involving the vortex and the Holton-Tan association \citep{HoltonJamesRTan1980}.
