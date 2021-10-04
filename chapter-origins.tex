@@ -150,6 +150,7 @@ X(t) = x(t) + \tilde{x}(t) i = A(t) e^{i\theta},
 Much of the analysis presented in this chapter, and indeed in the whole thesis, involves comparisons of composite and mean quantities. A two-tailed student's t-test is implemented to test the null hypothesis that two sampled quantities, $x_1$ and $x_2$, with means $\overline{x}_1$ and $\overline{x}_2$ and standard deviations $\sigma_{1}$ and $\sigma_{2}$ are drawn from the same underlying normal distribution. A $t$ statistic is defined by $t = \frac{\overline{x}_1 - \overline{x}_2}{\sigma_{12} \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$ where $n_i$ is the number of samples for quantity $i$ and $\sigma_{12}$ is the pooled variance for the two quantities given by $\sigma_{12} = \sqrt{\frac{\sigma^2_2 (n_2-1) + \sigma^2_1(n_1 - 1)}{n_1+n_2-2}}$. The significance level for the difference in means can then be estimated by comparing the value of $t$ with a Student's t-distribution to give an associated $p$ value. Differences which give a $p$ value greater than a deemed level (normally 95\%) are deemed significant in which case the null hypothesis of identical means is rejected to this level.
 
 \subsubsection{Correlation analysis}
+\label{sec:correlations}
 We use a standard measure of linear monotonic statistical association between two time series, the correlation coefficient, $r$ \citep{freedmanStatistics2007}. the r value between 2 time series, $x$ and $y$, is defined as the normalised covariance between the series - 
 
 \begin{equation} \label{r}
