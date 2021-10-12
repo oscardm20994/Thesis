@@ -207,12 +207,10 @@
 
 \renewenvironment{abstract} {\begin{alwayssingle} \thispagestyle{empty}
   \begin{center}
-  \vspace*{1.5cm}
   {\Large \bfseries  Abstract}
   \end{center}
-  \vspace{0.5cm}
-   \begin{quote}}
-{\end{quote}\end{alwayssingle}}
+  \vspace{0.5cm}}
+{\end{alwayssingle}}
 
 %The abstractlong environment puts a large, bold, centered "Abstract" label at
 %the top of the page. The abstract itself does not appears in a quote
@@ -220,8 +218,7 @@
 
 \newenvironment{abstractlong} {\begin{alwayssingle} \thispagestyle{empty}
   \begin{center}
-  \vspace*{1.5cm}
-  {\Large \bfseries  Abstract}
+  {\bfseries  Abstract}
   \end{center}
   \vspace{0.5cm}}
 {\end{alwayssingle}}
